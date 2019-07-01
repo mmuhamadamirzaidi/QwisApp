@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-//apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
@@ -48,15 +48,14 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
 
     //Firebase Library
+    implementation 'com.google.firebase:firebase-core:17.0.0'
     implementation 'com.google.firebase:firebase-firestore:20.1.0'
     implementation 'com.google.firebase:firebase-auth:18.0.0'
     implementation 'com.google.firebase:firebase-storage:18.0.0'
     implementation 'com.google.firebase:firebase-messaging:19.0.1'
 
-    //Facebook Account Kit
-    implementation 'com.facebook.android:account-kit-sdk:4.39.0'
-
     //Others Library
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation 'com.jakewharton:butterknife:10.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
 

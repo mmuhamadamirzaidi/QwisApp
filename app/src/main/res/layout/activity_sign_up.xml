@@ -40,7 +40,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/mm"
-                android:text="SIGN IN ACCOUNT"
+                android:text="SIGN UP ACCOUNT"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
 
@@ -56,12 +56,48 @@
             android:rotation="45"
             android:src="@drawable/square" />
 
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp">
+
+            <ImageView
+                android:id="@+id/imgView_emailIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/colorPrimaryDark"
+                android:padding="8dp"
+                android:src="@drawable/ic_mail_outline_white_24dp"
+                android:tint="@color/white" />
+
+            <EditText
+                android:id="@+id/signup_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imgView_emailIcon"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imgView_emailIcon"
+                android:background="@drawable/bg_input_general"
+                android:fontFamily="@font/ml"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
 
         <RelativeLayout
             android:id="@+id/relativeLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView1"
+            android:layout_below="@+id/relativeLayout1"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="10dp">
@@ -76,7 +112,7 @@
                 android:tint="@color/white" />
 
             <EditText
-                android:id="@+id/signin_username"
+                android:id="@+id/signup_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imgView_usernameIcon"
@@ -112,7 +148,7 @@
                 android:tint="@color/white" />
 
             <EditText
-                android:id="@+id/signin_password"
+                android:id="@+id/signup_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imgView_password"
@@ -130,7 +166,7 @@
         </RelativeLayout>
 
         <Button
-            android:id="@+id/signin_button"
+            android:id="@+id/signup_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/relativeLayout3"
@@ -139,14 +175,14 @@
             android:layout_marginRight="10dp"
             android:background="@color/colorPrimaryDark"
             android:fontFamily="@font/mm"
-            android:text="SIGN IN"
+            android:text="SIGN UP"
             android:textColor="@color/white" />
 
         <RelativeLayout
             android:id="@+id/rellay2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/signin_button"
+            android:layout_below="@+id/signup_button"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="10dp">
@@ -163,7 +199,7 @@
                 android:textSize="13sp" />
 
             <Button
-                android:id="@+id/signup_account_button"
+                android:id="@+id/signin_account_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
