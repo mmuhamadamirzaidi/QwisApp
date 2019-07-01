@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "889543230954",
+    "firebase_url": "https://qwisapp.firebaseio.com",
+    "project_id": "qwisapp",
+    "storage_bucket": "qwisapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889543230954:android:a27c4c6eefd48ffc",
+        "android_client_info": {
+          "package_name": "com.mmuhamadamirzaidi.qwisapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889543230954-hasrl78sg31h4pdtjn7ehbtu2h2kilp9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mmuhamadamirzaidi.qwisapp",
+            "certificate_hash": "2f1959cb05759578ae9430a34b2a8eddf3d01f13"
+          }
+        },
+        {
+          "client_id": "889543230954-sblkfa4203ol5f197u06n9pkmdli92uc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXgMfLfodvsCCBSSXR3EPJcCGnXe-o_ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889543230954-sblkfa4203ol5f197u06n9pkmdli92uc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
