@@ -26,7 +26,7 @@ import com.mmuhamadamirzaidi.qwisapp.Model.User;
 
 public class SignUpActivity extends AppCompatActivity {
     Button SignUpButton; //Use for sign up & sign in options
-    EditText SignUpEmail, SignUpUsername, SignUpPassword; //Use for getting user inputs to sign up
+    EditText SignUpEmail, SignUpPassword, SignUpConfirmPassword; //Use for getting user inputs to sign up
 
     Button ForgetPasswordButton, SignInAccountButton; //Use for redirect users to desire page
 
@@ -42,9 +42,9 @@ public class SignUpActivity extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
 
         //Sign Up
-        SignUpEmail = (EditText) findViewById(R.id.signup_username);
-        SignUpUsername = (EditText) findViewById(R.id.signup_email);
+        SignUpEmail = (EditText) findViewById(R.id.signup_email);
         SignUpPassword = (EditText) findViewById(R.id.signup_password);
+        SignUpConfirmPassword = (EditText) findViewById(R.id.signup_confirm_password);
         SignUpButton = (Button) findViewById(R.id.signup_button);
 
         //Others
@@ -90,9 +90,9 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void SignUpAccount() {
-        String username = SignUpUsername.getText().toString().trim();
         String email = SignUpEmail.getText().toString().trim();
         String password = SignUpPassword.getText().toString().trim();
+        String confirmPassword = SignUpConfirmPassword.getText().toString().trim();
 
         Boolean valid = true;
 
@@ -141,9 +141,14 @@ public class SignUpActivity extends AppCompatActivity {
             Toast.makeText(this, "Password should contain at least one special character!", Toast.LENGTH_SHORT).show();
             valid = false;
         }
-        if (TextUtils.isEmpty(username))
+        if (TextUtils.isEmpty(confirmPassword))
         {
-            Toast.makeText(this, "Please fill in your username!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please fill in your confirm password!", Toast.LENGTH_SHORT).show();
+            valid = false;
+        }
+        if (!confirmPassword.equals(password))
+        {
+            Toast.makeText(this, "Password do not match!", Toast.LENGTH_SHORT).show();
             valid = false;
         }
         if(valid)

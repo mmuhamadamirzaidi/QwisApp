@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_list">
+
+
+        <ImageView
+            android:id="@+id/category_image"
+            android:src="@drawable/logosecondaryblack"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/category_name"
+            android:fontFamily="@font/mm"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Category Title"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/category_image"
+            android:layout_alignStart="@+id/category_image"
+            android:layout_alignLeft="@id/category_image"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="8dp" />
+
+        <TextView
+            android:id="@+id/category_description"
+            android:fontFamily="@font/ml"
+            android:textSize="16sp"
+            android:textColor="#ADADAD"
+            android:gravity="center"
+            android:text="Category Descriptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/category_name"
+            android:layout_alignStart="@+id/category_image"
+            android:layout_alignLeft="@id/category_image" />
+    </RelativeLayout>
