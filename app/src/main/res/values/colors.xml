@@ -6,4 +6,9 @@
 
     <color name="color_transparent">#00000000</color>
     <color name="text_color">#6e6e6e</color>
+
+    <!-- colors for tab and screen text -->
+    <color name="tab_indicator_gray">#c0c0c0</color>
+    <color name="intro_title_color">#000000</color>
+    <color name="intro_description_color">#656565</color>
 </resources>
