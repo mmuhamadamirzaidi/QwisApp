@@ -1,218 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_view"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    android:layout_marginLeft="20dp"
-    android:layout_marginTop="20dp"
-    android:layout_marginRight="20dp"
-    android:layout_marginBottom="20dp"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="3dp"
-    app:cardPreventCornerOverlap="false"
-    app:cardUseCompatPadding="true">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SignUpActivity">
 
-    <RelativeLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true">
 
-        <LinearLayout
-            android:id="@+id/linearLayout1"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/circle"
+                    android:src="@drawable/ic_account_circle_white_24dp"
+                    android:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/mm"
+                    android:text="SIGN UP ACCOUNT"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/circle"
-                android:src="@drawable/ic_account_circle_white_24dp"
-                android:tint="@color/white" />
+                android:id="@+id/imageView1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/linearLayout1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-10dp"
+                android:rotation="45"
+                android:src="@drawable/square" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp"
+                android:layout_below="@+id/imageView1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="10dp">
+
+                <ImageView
+                    android:id="@+id/imgView_emailIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_mail_outline_white_24dp"
+                    android:tint="@color/white" />
+
+                <EditText
+                    android:id="@+id/signup_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imgView_emailIcon"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/imgView_emailIcon"
+                    android:background="@drawable/bg_input_general"
+                    android:fontFamily="@font/ml"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayout1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp">
+
+                <ImageView
+                    android:id="@+id/imgView_usernameIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_person_outline_white_24dp"
+                    android:tint="@color/white" />
+
+                <EditText
+                    android:id="@+id/signup_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imgView_usernameIcon"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/imgView_usernameIcon"
+                    android:background="@drawable/bg_input_general"
+                    android:fontFamily="@font/ml"
+                    android:hint="Username"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp">
+
+                <ImageView
+                    android:id="@+id/imgView_password"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_lock_outline_white_24dp"
+                    android:tint="@color/white" />
+
+                <EditText
+                    android:id="@+id/signup_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imgView_password"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/imgView_password"
+                    android:background="@drawable/bg_input_general"
+                    android:fontFamily="@font/ml"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/signup_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayout3"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorPrimaryDark"
                 android:fontFamily="@font/mm"
-                android:text="SIGN UP ACCOUNT"
-                android:textColor="@color/white"
-                android:textSize="22sp" />
+                android:text="SIGN UP"
+                android:textColor="@color/white" />
 
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_below="@+id/linearLayout1"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="-10dp"
-            android:rotation="45"
-            android:src="@drawable/square" />
-
-        <RelativeLayout
-            android:id="@+id/relativeLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="10dp">
-
-            <ImageView
-                android:id="@+id/imgView_emailIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@color/colorPrimaryDark"
-                android:padding="8dp"
-                android:src="@drawable/ic_mail_outline_white_24dp"
-                android:tint="@color/white" />
-
-            <EditText
-                android:id="@+id/signup_email"
+            <RelativeLayout
+                android:id="@+id/rellay2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imgView_emailIcon"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/imgView_emailIcon"
-                android:background="@drawable/bg_input_general"
-                android:fontFamily="@font/ml"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:textSize="15sp" />
+                android:layout_below="@+id/signup_button"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="10dp">
+
+                <Button
+                    android:id="@+id/forgot_password_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_transparent"
+                    android:fontFamily="@font/ml"
+                    android:text="FORGET PASSWORD?"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_color"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/signin_account_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/color_transparent"
+                    android:fontFamily="@font/ml"
+                    android:text="SIGN IN ACCOUNT"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_color"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
 
         </RelativeLayout>
 
 
-        <RelativeLayout
-            android:id="@+id/relativeLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/relativeLayout1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp">
+    </androidx.cardview.widget.CardView>
 
-            <ImageView
-                android:id="@+id/imgView_usernameIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@color/colorPrimaryDark"
-                android:padding="8dp"
-                android:src="@drawable/ic_person_outline_white_24dp"
-                android:tint="@color/white" />
-
-            <EditText
-                android:id="@+id/signup_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imgView_usernameIcon"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/imgView_usernameIcon"
-                android:background="@drawable/bg_input_general"
-                android:fontFamily="@font/ml"
-                android:hint="Username"
-                android:inputType="text"
-                android:maxLines="1"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:textSize="15sp" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/relativeLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/relativeLayout2"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp">
-
-            <ImageView
-                android:id="@+id/imgView_password"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@color/colorPrimaryDark"
-                android:padding="8dp"
-                android:src="@drawable/ic_lock_outline_white_24dp"
-                android:tint="@color/white" />
-
-            <EditText
-                android:id="@+id/signup_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imgView_password"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/imgView_password"
-                android:background="@drawable/bg_input_general"
-                android:fontFamily="@font/ml"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:textSize="15sp" />
-
-        </RelativeLayout>
-
-        <Button
-            android:id="@+id/signup_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/relativeLayout3"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            android:background="@color/colorPrimaryDark"
-            android:fontFamily="@font/mm"
-            android:text="SIGN UP"
-            android:textColor="@color/white" />
-
-        <RelativeLayout
-            android:id="@+id/rellay2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/signup_button"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="10dp">
-
-            <Button
-                android:id="@+id/forgot_password_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/color_transparent"
-                android:fontFamily="@font/ml"
-                android:text="FORGET PASSWORD?"
-                android:textAllCaps="true"
-                android:textColor="@color/text_color"
-                android:textSize="13sp" />
-
-            <Button
-                android:id="@+id/signin_account_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:background="@color/color_transparent"
-                android:fontFamily="@font/ml"
-                android:text="SIGN IN ACCOUNT"
-                android:textAllCaps="true"
-                android:textColor="@color/text_color"
-                android:textSize="13sp" />
-
-        </RelativeLayout>
-
-    </RelativeLayout>
-
-
-</androidx.cardview.widget.CardView>
+</RelativeLayout>
