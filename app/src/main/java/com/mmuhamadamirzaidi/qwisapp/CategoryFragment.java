@@ -63,11 +63,12 @@ public class CategoryFragment extends Fragment {
             @Override
             protected void populateViewHolder(CategoryViewHolder viewHolder, final Category model, int position){
                 viewHolder.categoryName.setText(model.getName());
-                viewHolder.categoryDescription.setText(model.getDescription());
 
                 Picasso.with(getActivity())
                         .load(model.getImage())
                         .into(viewHolder.categoryImage);
+
+                viewHolder.categoryDescription.setText(model.getDescription());
 
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
