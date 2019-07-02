@@ -78,11 +78,11 @@
                     android:layout_height="40dp"
                     android:background="@color/colorPrimaryDark"
                     android:padding="8dp"
-                    android:src="@drawable/ic_mail_outline_white_24dp"
+                    android:src="@drawable/ic_person_outline_white_24dp"
                     android:tint="@color/white" />
 
                 <EditText
-                    android:id="@+id/signup_email"
+                    android:id="@+id/signup_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/imgView_emailIcon"
@@ -90,15 +90,14 @@
                     android:layout_toRightOf="@+id/imgView_emailIcon"
                     android:background="@drawable/bg_input_general"
                     android:fontFamily="@font/ml"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
+                    android:hint="Username"
+                    android:inputType="text"
                     android:maxLines="1"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:textSize="15sp" />
 
             </RelativeLayout>
-
 
             <RelativeLayout
                 android:id="@+id/relativeLayout2"
@@ -115,11 +114,11 @@
                     android:layout_height="40dp"
                     android:background="@color/colorPrimaryDark"
                     android:padding="8dp"
-                    android:src="@drawable/ic_person_outline_white_24dp"
+                    android:src="@drawable/ic_mail_outline_white_24dp"
                     android:tint="@color/white" />
 
                 <EditText
-                    android:id="@+id/signup_username"
+                    android:id="@+id/signup_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/imgView_usernameIcon"
@@ -127,8 +126,8 @@
                     android:layout_toRightOf="@+id/imgView_usernameIcon"
                     android:background="@drawable/bg_input_general"
                     android:fontFamily="@font/ml"
-                    android:hint="Username"
-                    android:inputType="text"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
