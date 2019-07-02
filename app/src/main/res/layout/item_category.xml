@@ -1,34 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp">
-
-    <RelativeLayout
-        android:paddingBottom="16dp"
-        android:id="@+id/container"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_list"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+    android:background="@drawable/bg_list">
 
 
         <ImageView
             android:id="@+id/category_image"
             android:src="@drawable/logosecondaryblack"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="250dp"
             android:scaleType="centerCrop"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:layout_marginTop="20dp" />
 
         <TextView
@@ -37,6 +21,7 @@
             android:textSize="18sp"
             android:textColor="@color/colorPrimaryDark"
             android:text="Category Title"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/category_image"
@@ -50,6 +35,7 @@
             android:fontFamily="@font/ml"
             android:textSize="16sp"
             android:textColor="#ADADAD"
+            android:gravity="center"
             android:text="Category Descriptions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,5 +43,3 @@
             android:layout_alignStart="@+id/category_image"
             android:layout_alignLeft="@id/category_image" />
     </RelativeLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>

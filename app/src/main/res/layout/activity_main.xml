@@ -9,42 +9,42 @@
     tools:context=".MainActivity">
 
     <FrameLayout
-        android:id="@+id/fragment_container"
+        android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation">
+        android:layout_above="@+id/navigation">
 
-        <LinearLayout
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+        <!--<LinearLayout-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginRight="20dp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical"-->
+            <!--android:gravity="center">-->
 
-            <ImageView
-                android:src="@drawable/logosecondaryblack"
-                android:layout_width="wrap_content"
-                android:layout_height="300dp" />
+            <!--<ImageView-->
+                <!--android:src="@drawable/logosecondaryblack"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="300dp" />-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dashboard"
-                android:textSize="30dp"
-                android:fontFamily="@font/mm"
-                android:textColor="@color/colorPrimaryDark"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Dashboard"-->
+                <!--android:textSize="30dp"-->
+                <!--android:fontFamily="@font/mm"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--app:layout_constraintRight_toRightOf="parent"-->
+                <!--app:layout_constraintTop_toTopOf="parent" />-->
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
 
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+        android:id="@+id/navigation"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimaryDark"
         app:itemIconTint="@color/white"
