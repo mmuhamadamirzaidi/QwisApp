@@ -59,7 +59,7 @@ dependencies {
 
     //Firebase Library
     implementation 'com.firebaseui:firebase-ui-database:1.2.0'
-    implementation 'com.google.firebase:firebase-core:10.0.0'
+    implementation 'com.google.firebase:firebase-core:17.0.0'
     implementation 'com.google.firebase:firebase-database:18.0.0'
     implementation 'com.google.firebase:firebase-firestore:20.1.0'
     implementation 'com.google.firebase:firebase-auth:18.0.0'
@@ -84,10 +84,10 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
 
-    implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.0'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
 
-    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation "android.arch.core:runtime:1.1.1"
     implementation "android.arch.core:common:1.1.1"
     implementation 'android.arch.lifecycle:extensions:1.1.1'

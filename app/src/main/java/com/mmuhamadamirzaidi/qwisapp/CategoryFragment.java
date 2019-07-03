@@ -64,9 +64,11 @@ public class CategoryFragment extends Fragment {
             protected void populateViewHolder(CategoryViewHolder viewHolder, final Category model, int position){
                 viewHolder.categoryName.setText(model.getName());
 
-                Picasso.with(getActivity())
-                        .load(model.getImage())
-                        .into(viewHolder.categoryImage);
+//                Picasso.with(getActivity())
+//                        .load(model.getImage())
+//                        .into(viewHolder.categoryImage);
+
+                Picasso.get().load(model.getImage()).into(viewHolder.categoryImage);
 
                 viewHolder.categoryDescription.setText(model.getDescription());
 

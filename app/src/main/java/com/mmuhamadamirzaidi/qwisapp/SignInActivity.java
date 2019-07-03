@@ -18,6 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+@SuppressWarnings("unchecked")
 public class SignInActivity extends AppCompatActivity {
 
     Button SignInButton; //Use for sign up & sign in options
