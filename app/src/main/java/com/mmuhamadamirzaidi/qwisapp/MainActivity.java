@@ -76,7 +76,10 @@ public class MainActivity extends AppCompatActivity {
         RankingMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Ranking page not available yet!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "Ranking page not available yet!", Toast.LENGTH_SHORT).show();
+
+                Intent categoryIntent = new Intent(MainActivity.this, RankingActivity.class);
+                startActivity(categoryIntent);
             }
         });
 
