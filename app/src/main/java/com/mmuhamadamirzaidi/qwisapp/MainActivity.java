@@ -1,12 +1,18 @@
 package com.mmuhamadamirzaidi.qwisapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -14,9 +20,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button CategoryMenu, RankingMenu;
 
     private FirebaseAuth mAuth;
     private DatabaseReference UsersRef;
@@ -34,22 +41,16 @@ public class MainActivity extends AppCompatActivity {
 
         UsersRef.child(currentUserID).addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot)
-            {
-                if(dataSnapshot.exists())
-                {
-                    if(dataSnapshot.hasChild("fullname"))
-                    {
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    if (dataSnapshot.hasChild("fullname")) {
                         String fullname = dataSnapshot.child("fullname").getValue().toString();
 
                         String matricid = dataSnapshot.child("username").getValue().toString();
                     }
-                    if(dataSnapshot.hasChild("profileimage"))
-                    {
+                    if (dataSnapshot.hasChild("profileimage")) {
                         String image = dataSnapshot.child("profileimage").getValue().toString();
-                    }
-                    else
-                    {
+                    } else {
                         Toast.makeText(MainActivity.this, "Profile does not exist!", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -60,6 +61,25 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        CategoryMenu = (Button)findViewById(R.id.categoryMenu);
+        RankingMenu = (Button)findViewById(R.id.rankingMenu);
+
+        CategoryMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent categoryIntent = new Intent(MainActivity.this, CategoryActivity.class);
+                startActivity(categoryIntent);
+            }
+        });
+
+        RankingMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Ranking page not available yet!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override
@@ -68,11 +88,9 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
-        if (currentUser == null)
-        {
+        if (currentUser == null) {
             SendUserToSignInActivity();
-        }
-        else{
+        } else {
             CheckUserExistance();
         }
     }
@@ -83,8 +101,7 @@ public class MainActivity extends AppCompatActivity {
         UsersRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (!dataSnapshot.hasChild(current_user_id))
-                {
+                if (!dataSnapshot.hasChild(current_user_id)) {
                     SendUserToSetupActivity();
                 }
             }
