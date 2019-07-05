@@ -3,6 +3,8 @@ package com.mmuhamadamirzaidi.qwisapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,12 +23,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button CategoryMenu, RankingMenu;
+
     private FirebaseAuth mAuth;
     private DatabaseReference UsersRef;
 
     String currentUserID;
-
-    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,39 +62,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation);
-//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-//                Fragment selectedFragment = null;
-//
-//                switch (menuItem.getItemId()){
-//                    case R.id.action_category:
-//                        selectedFragment = CategoryFragment.newInstance();
-//                        break;
-//
-//                    case R.id.action_ranking:
-//                        selectedFragment = RankingFragment.newInstance();
-//                        break;
-//
-////                    case R.id.action_profile:
-////                        selectedFragment = ProfileFragment.newInstance();
-////                        break;
-//                }
-//                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//                transaction.replace(R.id.frame_layout, selectedFragment);
-//                transaction.commit();
-//                return true;
-//            }
-//        });
-//        setDefaultFragment();
-    }
+        CategoryMenu = (Button)findViewById(R.id.categoryMenu);
+        RankingMenu = (Button)findViewById(R.id.rankingMenu);
 
-//    private void setDefaultFragment() {
-//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.frame_layout, CategoryFragment.newInstance());
-//        transaction.commit();
-//    }
+        CategoryMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent categoryIntent = new Intent(MainActivity.this, CategoryActivity.class);
+                startActivity(categoryIntent);
+            }
+        });
+
+        RankingMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Ranking page not available yet!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
 
     @Override
     protected void onStart() {
