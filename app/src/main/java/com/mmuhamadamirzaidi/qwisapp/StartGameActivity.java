@@ -17,15 +17,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.IOException;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class StartGameActivity extends AppCompatActivity {
 
-    TextView CategoryTitle, CategorySubtitle;
+    private TextView CategoryTitle, CategorySubtitle, CategoryTitleHeader;
 
-    Button ButtonCategoryPlayQuiz;
-    Animation AnimationOne, AnimationTwo, AnimationThree;
-    ImageView CategoryImageIcon;
+    private Button ButtonCategoryPlayQuiz;
+    private Animation AnimationOne, AnimationTwo, AnimationThree;
+    private CircleImageView CategoryImageIcon, CategoryImageIconProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +37,15 @@ public class StartGameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start_game);
 
         CategoryImageIcon = findViewById(R.id.categoryimageicon);
+        CategoryImageIconProfile = findViewById(R.id.categoryimageiconprofile);
         CategoryTitle = findViewById(R.id.categorytitle);
         CategorySubtitle = findViewById(R.id.categorysubtitle);
+        CategoryTitleHeader = findViewById(R.id.categorytitleheader);
         ButtonCategoryPlayQuiz = findViewById(R.id.buttoncategoryplayquiz);
+
+        //Get a value from previous page
+        CategoryTitleHeader.setText(getIntent().getStringExtra("Name"));
+        CategoryTitle.setText(getIntent().getStringExtra("Name"));
 
         if (Build.VERSION.SDK_INT>=21) {
             setupWindowAnimations();
