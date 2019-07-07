@@ -1,138 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:padding="@dimen/cardview_default_elevation"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     tools:context=".PlayingGameActivity">
 
     <RelativeLayout
         android:id="@+id/quiz_footer"
+        style="@style/QuizPageFooter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        style="@style/QuizPageFooter"
         android:layout_marginBottom="100dp">
 
         <TextView
-            android:text="CURRENT SCORE : 100"
-            android:fontFamily="@font/mm"
             android:id="@+id/txtScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
+            android:layout_alignParentTop="true"
+            android:fontFamily="@font/mm"
+            android:text="CURRENT SCORE : 100" />
 
         <TextView
-            android:text="QUESTIONS : 5/20"
-            android:fontFamily="@font/mm"
             android:id="@+id/txtTotalQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:textAllCaps="true"/>
+            android:layout_alignParentRight="true"
+            android:fontFamily="@font/mm"
+            android:text="QUESTIONS : 5/20"
+            android:textAllCaps="true" />
 
     </RelativeLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <androidx.cardview.widget.CardView
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/quiz_footer"
             card_view:cardCornerRadius="8dp"
-            card_view:cardUseCompatPadding="true"
-            android:layout_below="@id/quiz_footer">
+            card_view:cardUseCompatPadding="true">
+
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <ProgressBar
                     android:id="@+id/progressBar"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:max="5"/>
+                    android:max="5" />
 
                 <TextView
-                    android:text="@string/question_text"
-                    android:gravity="center"
+                    android:id="@+id/question_text"
+                    style="@style/QuizCardQuestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/mm"
-                    android:id="@+id/question_textview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/QuizCardQuestion"/>
+                    android:gravity="center"
+                    android:text="@string/question_text" />
 
-                <!--<ImageView-->
-                <!--android:visibility="invisible"-->
-                <!--android:id="@+id/question_image"-->
-                <!--android:src="@drawable/logosecondaryblack"-->
-                <!--android:gravity="center"-->
-                <!--android:scaleType="centerCrop"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="200dp"-->
-                <!--style="@style/QuizCardQuestion"/>-->
+                <ImageView
+                android:visibility="invisible"
+                android:id="@+id/question_image"
+                android:src="@drawable/logosecondaryblack"
+                android:gravity="center"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                style="@style/QuizCardQuestion"/>
 
 
                 <Button
-                    android:text="Answer A"
-                    android:textSize="16sp"
-                    android:gravity="center"
-                    android:fontFamily="@font/ml"
                     android:id="@+id/btnAnswerA"
+                    style="@style/QuizCardChoice.OddChoice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/QuizCardChoice.OddChoice"
-                    android:background="@drawable/question_button"/>
+                    android:background="@drawable/question_button"
+                    android:fontFamily="@font/ml"
+                    android:gravity="center"
+                    android:text="Answer A"
+                    android:textSize="16sp" />
 
-                <include layout="@layout/divider"/>
+                <include layout="@layout/divider" />
 
                 <Button
-                    android:text="Answer B"
-                    android:textSize="16sp"
-                    android:gravity="center"
-                    android:fontFamily="@font/ml"
                     android:id="@+id/btnAnswerB"
+                    style="@style/QuizCardChoice.EvenChoice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/QuizCardChoice.EvenChoice"
-                    android:background="@drawable/question_button"/>
+                    android:background="@drawable/question_button"
+                    android:fontFamily="@font/ml"
+                    android:gravity="center"
+                    android:text="Answer B"
+                    android:textSize="16sp" />
 
-                <include layout="@layout/divider"/>
+                <include layout="@layout/divider" />
 
                 <Button
-                    android:text="Answer C"
-                    android:textSize="16sp"
-                    android:gravity="center"
-                    android:fontFamily="@font/ml"
                     android:id="@+id/btnAnswerC"
+                    style="@style/QuizCardChoice.OddChoice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/QuizCardChoice.OddChoice"
-                    android:background="@drawable/question_button"/>
+                    android:background="@drawable/question_button"
+                    android:fontFamily="@font/ml"
+                    android:gravity="center"
+                    android:text="Answer C"
+                    android:textSize="16sp" />
 
-                <include layout="@layout/divider"/>
+                <include layout="@layout/divider" />
 
                 <Button
-                    android:text="Answer D"
-                    android:textSize="16sp"
-                    android:gravity="center"
-                    android:fontFamily="@font/ml"
                     android:id="@+id/btnAnswerD"
+                    style="@style/QuizCardChoice.EvenChoice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/QuizCardChoice.EvenChoice"
-                    android:background="@drawable/question_button"/>
+                    android:background="@drawable/question_button"
+                    android:fontFamily="@font/ml"
+                    android:gravity="center"
+                    android:text="Answer D"
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
