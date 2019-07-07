@@ -8,4 +8,30 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="QuizCardQuestion">
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:textColor">@color/cardview_light_background</item>
+        <item name="android:padding">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="QuizCardChoice" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:gravity">left|start</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:padding">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="QuizCardChoice.OddChoice" parent="QuizCardChoice">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="QuizCardChoice.EvenChoice" parent="QuizCardChoice">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="QuizPageFooter">
+        <item name="android:background">#F4F4F4</item>
+        <item name="android:padding">@dimen/activity_horizontal_margin</item>
+    </style>
+
 </resources>
