@@ -85,7 +85,7 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/ml"
             android:gravity="center"
-            android:text="Finish The Quiz Wisely"
+            android:text="Answer The Quiz Wisely"
             android:textColor="#FFF"
             android:textSize="18sp" />
 
@@ -233,7 +233,7 @@
         app:layout_constraintTop_toBottomOf="@+id/resultstitle" />
 
     <Button
-        android:id="@+id/buttonresultstryagain"
+        android:id="@+id/buttoncategoryplayquiz"
         android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

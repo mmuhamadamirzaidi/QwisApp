@@ -1,5 +1,6 @@
 package com.mmuhamadamirzaidi.qwisapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.drawable.RoundedBitmapDrawable;
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
@@ -13,13 +14,21 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.mmuhamadamirzaidi.qwisapp.Common.Common;
+import com.mmuhamadamirzaidi.qwisapp.Model.Category;
+import com.mmuhamadamirzaidi.qwisapp.Model.Questions;
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -29,17 +38,23 @@ public class StartGameActivity extends AppCompatActivity {
 
     private Button ButtonCategoryPlayQuiz;
     private Animation AnimationOne, AnimationTwo, AnimationThree;
-    private CircleImageView CategoryImageIcon, CategoryImageIconProfile;
+    private CircleImageView CategoryImageIcon;
+
+    FirebaseDatabase database;
+    DatabaseReference questions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_game);
 
+        //Firebase
+        database = FirebaseDatabase.getInstance();
+        questions = database.getReference("Questions");
+
         CategoryImageIcon = findViewById(R.id.categoryimageicon);
-        CategoryImageIconProfile = findViewById(R.id.categoryimageiconprofile);
-        CategoryTitle = findViewById(R.id.categorytitle);
-        CategorySubtitle = findViewById(R.id.categorysubtitle);
+        CategoryTitle = findViewById(R.id.resultstitle);
+        CategorySubtitle = findViewById(R.id.resultssubtitle);
         CategoryTitleHeader = findViewById(R.id.categorytitleheader);
         ButtonCategoryPlayQuiz = findViewById(R.id.buttoncategoryplayquiz);
 
@@ -70,6 +85,32 @@ public class StartGameActivity extends AppCompatActivity {
                 Toast.makeText(StartGameActivity.this, "Play Game!", Toast.LENGTH_SHORT).show();
             }
         });
+
+        //Load questions once Play Quiz button clicked
+        loadQuestions(Common.categoryId);
+    }
+
+    private void loadQuestions(String categoryId) {
+
+        //Clear list if there're previous questions
+        if (Common.ListQuestion.size() > 0)
+            Common.ListQuestion.clear();
+
+        questions.orderByChild("categoryId").equalTo(categoryId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    Questions ques = dataSnapshot1.getValue(Questions.class);
+                    Common.ListQuestion.add(ques);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        Collections.shuffle(Common.ListQuestion); //Shuffle questions to get random list questions
     }
 
     @TargetApi(21)
