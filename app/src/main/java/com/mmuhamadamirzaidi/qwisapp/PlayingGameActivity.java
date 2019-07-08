@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 public class PlayingGameActivity extends AppCompatActivity implements View.OnClickListener{
 
     final static long INTERVAL = 1000; //1 second
-    final static long TIMEOUT = 7000; //7 second
+    final static long TIMEOUT = 10000; //10 second
     int progressValue = 0;
 
     CountDownTimer mCountDown;
@@ -79,22 +79,34 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
     private void showQuestions(int index) {
         if (index < totalQuestion){
             thisQuestion++;
-            txtQuestionNum.setText(String.format("%d / %d", thisQuestion, totalQuestion));
+            txtQuestionNum.setText(String.format("QUESTIONS : %d / %d", thisQuestion, totalQuestion));
             progressBar.setProgress(0);
             progressValue=0;
 
-            if (Common.ListQuestion.get(index).getIsImageQuestion().equals("true")){
-                //If question is image
-                Picasso.get().load(Common.ListQuestion.get(index).getQuestion()).into(question_image);
-
-                question_image.setVisibility(View.VISIBLE);
-                question_text.setVisibility(View.INVISIBLE);
-            }
-            else{
+//            if (Common.ListQuestion.get(index).getIsImageQuestion().equals("true")){
+//                //If question is image
+//                Picasso.get().load(Common.ListQuestion.get(index).getQuestion()).into(question_image);
+//
+//                question_image.setVisibility(View.VISIBLE);
+//                question_text.setVisibility(View.INVISIBLE);
+//            }
+//            else{
+//                question_text.setText(Common.ListQuestion.get(index).getQuestion());
+//
+//                question_image.setVisibility(View.INVISIBLE);
+//                question_text.setVisibility(View.VISIBLE);
+//            }
+            if (Common.ListQuestion.get(index).getIsImageQuestion().equals("false")){
                 question_text.setText(Common.ListQuestion.get(index).getQuestion());
 
                 question_image.setVisibility(View.INVISIBLE);
                 question_text.setVisibility(View.VISIBLE);
+//            }
+//            else{
+//                question_text.setText(Common.ListQuestion.get(index).getQuestion());
+//
+//                question_image.setVisibility(View.INVISIBLE);
+//                question_text.setVisibility(View.VISIBLE);
             }
             btnA.setText(Common.ListQuestion.get(index).getAnswerA());
             btnB.setText(Common.ListQuestion.get(index).getAnswerB());

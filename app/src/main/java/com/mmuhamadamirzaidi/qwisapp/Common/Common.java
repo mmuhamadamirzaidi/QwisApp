@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Common {
 
-    public static String categoryId;
+    public static String categoryId = "01";
     public static User currentUser;
     public static List<Questions> ListQuestion = new ArrayList<>();
 }

@@ -22,7 +22,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:fontFamily="@font/mm"
-            android:text="CURRENT SCORE : 100" />
+            android:text="CURRENT SCORE : 0" />
 
         <TextView
             android:id="@+id/txtTotalQuestion"
@@ -32,7 +32,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:fontFamily="@font/mm"
-            android:text="QUESTIONS : 5/20"
+            android:text="QUESTIONS : "
             android:textAllCaps="true" />
 
     </RelativeLayout>
@@ -62,26 +62,25 @@
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:max="5" />
+                    android:max="10" />
 
                 <TextView
-                    android:visibility="invisible"
                     android:id="@+id/question_text"
                     style="@style/QuizCardQuestion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/mm"
                     android:gravity="center"
-                    android:text="@string/question_text" />
+                    android:text="@string/question_text"/>
 
-                <ImageView
-                android:id="@+id/question_image"
-                android:src="@drawable/logosecondaryblack"
-                android:gravity="center"
-                android:scaleType="centerCrop"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                style="@style/QuizCardQuestion"/>
+                <!--<ImageView-->
+                    <!--android:id="@+id/question_image"-->
+                    <!--style="@style/QuizCardQuestion"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="200dp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:scaleType="centerCrop"-->
+                    <!--android:src="@drawable/logosecondaryblack" />-->
 
 
                 <Button

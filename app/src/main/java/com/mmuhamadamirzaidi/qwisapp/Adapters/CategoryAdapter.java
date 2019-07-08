@@ -61,6 +61,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
             public void onClick(View v) {
                 Intent startGame = new Intent(context, StartGameActivity.class);
 
+
+
 //                startGame.putExtra("IconImage", getIconImageCategory);
 //                startGame.putExtra("Icon", getImageCategory);
 
