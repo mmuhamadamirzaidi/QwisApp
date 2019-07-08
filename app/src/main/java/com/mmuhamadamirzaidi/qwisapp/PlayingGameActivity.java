@@ -81,8 +81,8 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
             thisQuestion++;
             txtQuestionNum.setText(String.format("QUESTIONS : %d / %d", thisQuestion, totalQuestion));
             progressBar.setProgress(0);
-            progressValue=0;
-            downtime =10;
+            progressValue = 0;
+            downtime = 10;
 
 //            if (Common.ListQuestion.get(index).getIsImageQuestion().equals("true")){
 //                //If question is image
