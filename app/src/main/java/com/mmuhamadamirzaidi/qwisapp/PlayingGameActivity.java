@@ -10,9 +10,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
 import com.squareup.picasso.Picasso;
 
@@ -26,10 +23,6 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
 
     int index = 0, score =0, thisQuestion = 0, totalQuestion = 0, correctAnswer;
 
-    //Firebase
-    FirebaseDatabase database;
-    DatabaseReference questions;
-
     ProgressBar progressBar;
     ImageView question_image;
     Button btnA, btnB, btnC, btnD;
@@ -40,14 +33,11 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing_game);
 
-        //Firebase
-        database = FirebaseDatabase.getInstance();
-        questions = database.getReference("Questions");
-
         //Views
         txtScore = (TextView)findViewById(R.id.txtScore);
         txtQuestionNum = (TextView)findViewById(R.id.txtTotalQuestion);
         question_text = (TextView)findViewById(R.id.question_text);
+        question_image =(ImageView)findViewById(R.id.question_image);
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
 
@@ -103,8 +93,8 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
             else{
                 question_text.setText(Common.ListQuestion.get(index).getQuestion());
 
-                question_image.setVisibility(View.VISIBLE);
-                question_text.setVisibility(View.INVISIBLE);
+                question_image.setVisibility(View.INVISIBLE);
+                question_text.setVisibility(View.VISIBLE);
             }
             btnA.setText(Common.ListQuestion.get(index).getAnswerA());
             btnB.setText(Common.ListQuestion.get(index).getAnswerB());
@@ -145,6 +135,6 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
                 showQuestions(++index);
             }
         };
-        showQuestions(++index);
+        showQuestions(index);
     }
 }

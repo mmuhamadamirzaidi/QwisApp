@@ -86,7 +86,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/total_quizzes_content"
+                android:id="@+id/txtTotalScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -116,7 +116,7 @@
 
             <TextView
                 android:text="1/20"
-                android:id="@+id/average_time_wrong"
+                android:id="@+id/txtTotalQuestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"

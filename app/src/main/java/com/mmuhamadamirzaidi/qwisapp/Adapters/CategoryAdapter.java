@@ -45,16 +45,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         myViewHolder.IconImage.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_transition_animation));
         myViewHolder.Container.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_scale_animation));
 
-        myViewHolder.Name.setText(category.get(i).getName());
         myViewHolder.Description.setText(category.get(i).getDescription());
         Picasso.get().load(category.get(i).getIconImage()).into(myViewHolder.IconImage);
         Picasso.get().load(category.get(i).getImage()).into(myViewHolder.Image);
+        myViewHolder.Name.setText(category.get(i).getName());
 
-        final String getNameCategory = category.get(i).getName();
         final String getDescriptionCategory = category.get(i).getDescription();
-        final String getImageCategory = category.get(i).getImage();
         final String getIconImageCategory = category.get(i).getIconImage();
-        final String getKeyCategory = category.get(i).getKey();
+        final String getImageCategory = category.get(i).getImage();
+        final String getNameCategory = category.get(i).getName();
+//        final String getKeyCategory = category.get(i).getKey();
 
         myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,8 +62,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
                 Intent startGame = new Intent(context, StartGameActivity.class);
 
 //                startGame.putExtra("IconImage", getIconImageCategory);
+//                startGame.putExtra("Icon", getImageCategory);
+
+//                Common.categoryId = ;
+                startGame.putExtra("Description", getDescriptionCategory);
                 startGame.putExtra("Name", getNameCategory);
-                startGame.putExtra("Key", getKeyCategory);
+//                Common.categoryId = myViewHolder.getAdapterPosition();
+
+//                Common.categoryId = myViewHolder.setOnClickListener(view -> delete(viewHolder.getAdapterPosition()));
+//                startGame.putExtra("Key", getKeyCategory);
+//                startGame.putExtra("Key", getKeyCategory);
 //                editMemo.putExtra("titledoes", getTitleDoes);
 //                editMemo.putExtra("descdoes", getDescDoes);
 //                editMemo.putExtra("datedoes", getDateDoes);

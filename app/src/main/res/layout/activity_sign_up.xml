@@ -79,12 +79,12 @@
                     android:layout_height="40dp"
                     android:background="@color/colorPrimaryDark"
                     android:padding="8dp"
-                    app:srcCompat="@drawable/ic_mail_outline_white_24dp"
+                    app:srcCompat="@drawable/ic_person_outline_white_24dp"
                     android:tint="@color/white" />
 
                 <EditText
-                    android:id="@+id/signup_email"
-                    android:inputType="textEmailAddress"
+                    android:id="@+id/signup_username"
+                    android:inputType="text"
                     android:maxLines="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imgView_emailIcon"
                     android:background="@drawable/bg_input_general"
-                    android:hint="Email"
+                    android:hint="Username"
                     android:fontFamily="@font/ml"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
@@ -116,11 +116,11 @@
                     android:layout_height="40dp"
                     android:background="@color/colorPrimaryDark"
                     android:padding="8dp"
-                    app:srcCompat="@drawable/ic_lock_outline_white_24dp"
+                    app:srcCompat="@drawable/ic_mail_outline_white_24dp"
                     android:tint="@color/white" />
 
                 <EditText
-                    android:id="@+id/signup_password"
+                    android:id="@+id/signup_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
@@ -128,8 +128,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imgView_passwordIcon"
                     android:background="@drawable/bg_input_general"
-                    android:hint="Password"
-                    android:inputType="textPassword"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:fontFamily="@font/ml"
@@ -156,7 +156,7 @@
                     android:tint="@color/white" />
 
                 <EditText
-                    android:id="@+id/signup_confirm_password"
+                    android:id="@+id/signup_password"
                     android:maxLines="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -164,7 +164,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imgView_passwordConfirm"
                     android:background="@drawable/bg_input_general"
-                    android:hint="Confirm Password"
+                    android:hint="Password"
                     android:inputType="textPassword"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
@@ -196,20 +196,9 @@
                 android:layout_marginTop="30dp" >
 
                 <Button
-                    android:id="@+id/forgot_password_button"
-                    android:fontFamily="@font/ml"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/color_transparent"
-                    android:text="FORGET PASSWORD?"
-                    android:textAllCaps="true"
-                    android:textSize="13sp"
-                    android:textColor="@color/text_color" />
-
-                <Button
                     android:id="@+id/signin_account_button"
                     android:fontFamily="@font/ml"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:background="@color/color_transparent"

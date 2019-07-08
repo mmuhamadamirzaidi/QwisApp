@@ -65,6 +65,7 @@
                     android:max="5" />
 
                 <TextView
+                    android:visibility="invisible"
                     android:id="@+id/question_text"
                     style="@style/QuizCardQuestion"
                     android:layout_width="match_parent"
@@ -74,7 +75,6 @@
                     android:text="@string/question_text" />
 
                 <ImageView
-                android:visibility="invisible"
                 android:id="@+id/question_image"
                 android:src="@drawable/logosecondaryblack"
                 android:gravity="center"

@@ -1,33 +1,16 @@
 package com.mmuhamadamirzaidi.qwisapp.Model;
 
 public class Category {
-    private String Name, Image, Description, Key, IconImage;
+    private String Description, IconImage, Image, Name;
 
     public Category() {
     }
 
-    public Category(String name, String image, String description, String key, String iconImage) {
-        Name = name;
-        Image = image;
+    public Category(String description, String iconImage, String image, String name) {
         Description = description;
-        Key = key;
         IconImage = iconImage;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
-
-    public String getImage() {
-        return Image;
-    }
-
-    public void setImage(String image) {
         Image = image;
+        Name = name;
     }
 
     public String getDescription() {
@@ -38,19 +21,27 @@ public class Category {
         Description = description;
     }
 
-    public String getKey() {
-        return Key;
-    }
-
-    public void setKey(String key) {
-        Key = key;
-    }
-
     public String getIconImage() {
         return IconImage;
     }
 
     public void setIconImage(String iconImage) {
         IconImage = iconImage;
+    }
+
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
     }
 }

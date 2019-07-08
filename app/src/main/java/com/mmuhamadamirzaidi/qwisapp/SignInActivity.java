@@ -3,8 +3,10 @@ package com.mmuhamadamirzaidi.qwisapp;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -16,18 +18,25 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.mmuhamadamirzaidi.qwisapp.Common.Common;
+import com.mmuhamadamirzaidi.qwisapp.Model.User;
 
 public class SignInActivity extends AppCompatActivity {
 
     Button SignInButton; //Use for sign up & sign in options
-    EditText SignInEmail, SignInPassword; //Use for getting user inputs to sign in
+    EditText SignInUsername, SignInPassword; //Use for getting user inputs to sign in
 
-    Button ForgetPasswordButton, SignUpAccountButton; //Use for redirect users to desire page
+    Button SignUpAccountButton; //Use for redirect users to desire page
 
     private ProgressDialog loadingBar;
 
-    private FirebaseAuth mAuth;
-    private Boolean emailAddressChecker;
+    FirebaseDatabase database;
+    DatabaseReference users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,21 +46,21 @@ public class SignInActivity extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
 
         //Sign In
-        SignInEmail = (EditText) findViewById(R.id.signin_email);
+        SignInUsername = (EditText) findViewById(R.id.signin_username);
         SignInPassword = (EditText) findViewById(R.id.signin_password);
         SignInButton = (Button) findViewById(R.id.signin_button);
 
         //Others
-        ForgetPasswordButton = (Button) findViewById(R.id.forgot_password_button);
         SignUpAccountButton = (Button) findViewById(R.id.signup_account_button);
 
         //Firebase
-        mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        users = database.getReference("Users");
 
         SignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SignInAccount();
+                SignInAccount(SignInUsername.getText().toString().trim(), SignInPassword.getText().toString().trim());
             }
         });
 
@@ -70,76 +79,44 @@ public class SignInActivity extends AppCompatActivity {
 //        });
     }
 
-    @Override
-    protected void onStart()
-    {
-        super.onStart();
+    private void SignInAccount(final String user, final String password) {
 
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        loadingBar.setTitle("Sign In Account");
+        loadingBar.setMessage("Please wait while you are redirecting to your account...");
+        loadingBar.show();
+        loadingBar.setCanceledOnTouchOutside(true);
 
-        if(currentUser != null)
-        {
-            SendUserToIntroActivity();
-        }
-    }
-
-    private void SignInAccount() {
-        String email = SignInEmail.getText().toString().trim();
-        String password = SignInPassword.getText().toString().trim();
-
-        Boolean valid = true;
-
-        if (TextUtils.isEmpty(email))
-        {
-            Toast.makeText(this, "Please fill in your email address!", Toast.LENGTH_SHORT).show();
-            valid = false;
-        }
-        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-        if (!email.matches(emailPattern ))
-        {
-            Toast.makeText(this, "Please use a valid email address!", Toast.LENGTH_SHORT).show();
-            valid = false;
-        }
-        if (valid)
-        {
-            loadingBar.setTitle("Sign In Account");
-            loadingBar.setMessage("Please wait while you are redirecting to your account...");
-            loadingBar.show();
-            loadingBar.setCanceledOnTouchOutside(true);
-
-            mAuth.signInWithEmailAndPassword(email,password)
-                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful())
-                            {
-                                VerifyEmailAddress();
-                                loadingBar.dismiss();
-                            }
-                            else
-                            {
-                                String message = task.getException().getMessage();
-                                Toast.makeText(SignInActivity.this, "Error occurred: "+message, Toast.LENGTH_SHORT).show();
-                                loadingBar.dismiss();
-                            }
+        users.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.child(user).exists()) {
+                    if (!user.isEmpty()) {
+                        User signin = dataSnapshot.child(user).getValue(User.class);
+                        if (signin.getPassword().equals(password)) {
+                            Toast.makeText(SignInActivity.this, "Sign in successfully!", Toast.LENGTH_SHORT).show();
+                            Common.currentUser = signin;
+                            SendUserToIntroActivity();
+                            finish();
+                            loadingBar.dismiss();
+                        } else {
+                            Toast.makeText(SignInActivity.this, "Password wrong!", Toast.LENGTH_SHORT).show();
+                            loadingBar.dismiss();
                         }
-                    });
-        }
-    }
+                    } else {
+                        Toast.makeText(SignInActivity.this, "Please fill in your username!", Toast.LENGTH_SHORT).show();
+                        loadingBar.dismiss();
+                    }
+                } else {
+                    Toast.makeText(SignInActivity.this, "User does not exist!", Toast.LENGTH_SHORT).show();
+                    loadingBar.dismiss();
+                }
+            }
 
-    private void VerifyEmailAddress()
-    {
-        FirebaseUser user = mAuth.getCurrentUser();
-        emailAddressChecker = user.isEmailVerified();
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        if (emailAddressChecker)
-        {
-            SendUserToIntroActivity();
-        }
-        else{
-            Toast.makeText(this, "Please verify your email address first!", Toast.LENGTH_SHORT).show();
-            mAuth.signOut();
-        }
+            }
+        });
     }
 
     private void SendUserToIntroActivity() {
