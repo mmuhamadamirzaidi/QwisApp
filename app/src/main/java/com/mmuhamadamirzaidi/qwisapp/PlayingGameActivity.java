@@ -11,13 +11,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
-import com.squareup.picasso.Picasso;
 
 public class PlayingGameActivity extends AppCompatActivity implements View.OnClickListener{
 
     final static long INTERVAL = 1000; //1 second
     final static long TIMEOUT = 10000; //10 second
-    int progressValue = 0;
+    int progressValue = 0, downtime = 10;
 
     CountDownTimer mCountDown;
 
@@ -26,7 +25,7 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
     ProgressBar progressBar;
     ImageView question_image;
     Button btnA, btnB, btnC, btnD;
-    TextView txtScore, txtQuestionNum, question_text;
+    TextView txtScore, txtQuestionNum, question_text, countdown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +33,7 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_playing_game);
 
         //Views
+        countdown = (TextView)findViewById(R.id.countdown);
         txtScore = (TextView)findViewById(R.id.txtScore);
         txtQuestionNum = (TextView)findViewById(R.id.txtTotalQuestion);
         question_text = (TextView)findViewById(R.id.question_text);
@@ -82,6 +82,7 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
             txtQuestionNum.setText(String.format("QUESTIONS : %d / %d", thisQuestion, totalQuestion));
             progressBar.setProgress(0);
             progressValue=0;
+            downtime =10;
 
 //            if (Common.ListQuestion.get(index).getIsImageQuestion().equals("true")){
 //                //If question is image
@@ -130,6 +131,8 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
             public void onTick(long minisec) {
                 progressBar.setProgress(progressValue);
                 progressValue++;
+                downtime--;
+                countdown.setText(String.format("TIME LEFT : %d", downtime));
             }
 
             @Override
