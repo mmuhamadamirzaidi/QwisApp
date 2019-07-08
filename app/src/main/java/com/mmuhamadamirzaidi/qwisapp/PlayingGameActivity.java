@@ -37,7 +37,7 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
         txtScore = (TextView)findViewById(R.id.txtScore);
         txtQuestionNum = (TextView)findViewById(R.id.txtTotalQuestion);
         question_text = (TextView)findViewById(R.id.question_text);
-        question_image =(ImageView)findViewById(R.id.question_image);
+//        question_image =(ImageView)findViewById(R.id.question_image);
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
 
@@ -73,7 +73,7 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
             startActivity(intent);
             finish();
         }
-        txtScore.setText(String.format("%d", score));
+        txtScore.setText(String.format("CURRENT SCORE : %d", score));
     }
 
     private void showQuestions(int index) {
@@ -98,15 +98,6 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
 //            }
             if (Common.ListQuestion.get(index).getIsImageQuestion().equals("false")){
                 question_text.setText(Common.ListQuestion.get(index).getQuestion());
-
-                question_image.setVisibility(View.INVISIBLE);
-                question_text.setVisibility(View.VISIBLE);
-//            }
-//            else{
-//                question_text.setText(Common.ListQuestion.get(index).getQuestion());
-//
-//                question_image.setVisibility(View.INVISIBLE);
-//                question_text.setVisibility(View.VISIBLE);
             }
             btnA.setText(Common.ListQuestion.get(index).getAnswerA());
             btnB.setText(Common.ListQuestion.get(index).getAnswerB());
