@@ -1,6 +1,7 @@
 package com.mmuhamadamirzaidi.qwisapp.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.mmuhamadamirzaidi.qwisapp.Common.Common;
 import com.mmuhamadamirzaidi.qwisapp.Model.Category;
 import com.mmuhamadamirzaidi.qwisapp.R;
+import com.mmuhamadamirzaidi.qwisapp.StartGameActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -56,13 +59,17 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent editMemo = new Intent(context, UpdateMemoActivity.class);
+                Intent startGame = new Intent(context, StartGameActivity.class);
+
+//                startGame.putExtra("IconImage", getIconImageCategory);
+                startGame.putExtra("Name", getNameCategory);
+                startGame.putExtra("Key", getKeyCategory);
 //                editMemo.putExtra("titledoes", getTitleDoes);
 //                editMemo.putExtra("descdoes", getDescDoes);
 //                editMemo.putExtra("datedoes", getDateDoes);
 //                editMemo.putExtra("keydoes", getKeyDoes);
-//                context.startActivity(editMemo);
-                Toast.makeText(context, "Category", Toast.LENGTH_SHORT).show();
+                context.startActivity(startGame);
+//                Toast.makeText(context, "Category", Toast.LENGTH_SHORT).show();
             }
         });
     }

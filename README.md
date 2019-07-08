@@ -12,11 +12,13 @@ Qwis app enable student test their knowledge by using quiz game. It is fun, addi
  1) View Profile
  2) Update Profile/Information
 
-### Notifications
- 1) Realtime Update Notification
- 2) Daily Notification
- 3) Push Notification
+## Game Play (Ongoing)
 
 ### Ranking All Users
 
 ### Score Board
+
+### Notifications
+ 1) Realtime Update Notification
+ 2) Daily Notification
+ 3) Push Notification
