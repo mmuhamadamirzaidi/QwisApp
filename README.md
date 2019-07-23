@@ -6,15 +6,9 @@ Qwis app enable student test their knowledge by using quiz game. It is fun, addi
 
 ### Sign In/Sign Up (Authenticate User) (Done)
 
-### Forget Password
+### Game Play (Done)
 
-### Account
- 1) View Profile
- 2) Update Profile/Information
-
-## Game Play (Ongoing)
-
-### Ranking All Users
+## Ranking All Users (Ongoing)
 
 ### Score Board
 

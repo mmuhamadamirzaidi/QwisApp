@@ -1,53 +1,42 @@
 package com.mmuhamadamirzaidi.qwisapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
-import com.squareup.picasso.Picasso;
 
 public class PlayingGameActivity extends AppCompatActivity implements View.OnClickListener{
 
     final static long INTERVAL = 1000; //1 second
-    final static long TIMEOUT = 7000; //7 second
-    int progressValue = 0;
+    final static long TIMEOUT = 10000; //10 second
+    int progressValue = 0, downtime = 10;
 
     CountDownTimer mCountDown;
 
     int index = 0, score =0, thisQuestion = 0, totalQuestion = 0, correctAnswer;
 
-    //Firebase
-    FirebaseDatabase database;
-    DatabaseReference questions;
-
     ProgressBar progressBar;
     ImageView question_image;
     Button btnA, btnB, btnC, btnD;
-    TextView txtScore, txtQuestionNum, question_text;
+    TextView txtScore, txtQuestionNum, question_text, countdown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playing_game);
 
-        //Firebase
-        database = FirebaseDatabase.getInstance();
-        questions = database.getReference("Questions");
-
         //Views
+        countdown = (TextView)findViewById(R.id.countdown);
         txtScore = (TextView)findViewById(R.id.txtScore);
         txtQuestionNum = (TextView)findViewById(R.id.txtTotalQuestion);
         question_text = (TextView)findViewById(R.id.question_text);
+//        question_image =(ImageView)findViewById(R.id.question_image);
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
 
@@ -83,28 +72,32 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
             startActivity(intent);
             finish();
         }
-        txtScore.setText(String.format("%d", score));
+        txtScore.setText(String.format("CURRENT SCORE : %d", score));
     }
 
     private void showQuestions(int index) {
         if (index < totalQuestion){
             thisQuestion++;
-            txtQuestionNum.setText(String.format("%d / %d", thisQuestion, totalQuestion));
+            txtQuestionNum.setText(String.format("QUESTIONS : %d / %d", thisQuestion, totalQuestion));
             progressBar.setProgress(0);
-            progressValue=0;
+            progressValue = 0;
+            downtime = 10;
 
-            if (Common.ListQuestion.get(index).getIsImageQuestion().equals("true")){
-                //If question is image
-                Picasso.get().load(Common.ListQuestion.get(index).getQuestion()).into(question_image);
-
-                question_image.setVisibility(View.VISIBLE);
-                question_text.setVisibility(View.INVISIBLE);
-            }
-            else{
+//            if (Common.ListQuestion.get(index).getIsImageQuestion().equals("true")){
+//                //If question is image
+//                Picasso.get().load(Common.ListQuestion.get(index).getQuestion()).into(question_image);
+//
+//                question_image.setVisibility(View.VISIBLE);
+//                question_text.setVisibility(View.INVISIBLE);
+//            }
+//            else{
+//                question_text.setText(Common.ListQuestion.get(index).getQuestion());
+//
+//                question_image.setVisibility(View.INVISIBLE);
+//                question_text.setVisibility(View.VISIBLE);
+//            }
+            if (Common.ListQuestion.get(index).getIsImageQuestion().equals("false")){
                 question_text.setText(Common.ListQuestion.get(index).getQuestion());
-
-                question_image.setVisibility(View.VISIBLE);
-                question_text.setVisibility(View.INVISIBLE);
             }
             btnA.setText(Common.ListQuestion.get(index).getAnswerA());
             btnB.setText(Common.ListQuestion.get(index).getAnswerB());
@@ -137,6 +130,8 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
             public void onTick(long minisec) {
                 progressBar.setProgress(progressValue);
                 progressValue++;
+                downtime--;
+                countdown.setText(String.format("TIME LEFT : %d", downtime));
             }
 
             @Override
@@ -145,6 +140,6 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
                 showQuestions(++index);
             }
         };
-        showQuestions(++index);
+        showQuestions(index);
     }
 }

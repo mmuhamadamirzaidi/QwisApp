@@ -1,6 +1,7 @@
-package com.mmuhamadamirzaidi.qwisapp;
+package com.mmuhamadamirzaidi.qwisapp.Model;
 
 public class ScreenItem {
+
     String Title, Description;
     int ScreenImg;
 

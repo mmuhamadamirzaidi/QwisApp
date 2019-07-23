@@ -2,6 +2,8 @@ package com.mmuhamadamirzaidi.qwisapp.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +11,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.mmuhamadamirzaidi.qwisapp.Common.Common;
 import com.mmuhamadamirzaidi.qwisapp.Model.Category;
 import com.mmuhamadamirzaidi.qwisapp.R;
 import com.mmuhamadamirzaidi.qwisapp.StartGameActivity;
@@ -45,25 +41,35 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         myViewHolder.IconImage.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_transition_animation));
         myViewHolder.Container.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_scale_animation));
 
-        myViewHolder.Name.setText(category.get(i).getName());
         myViewHolder.Description.setText(category.get(i).getDescription());
         Picasso.get().load(category.get(i).getIconImage()).into(myViewHolder.IconImage);
         Picasso.get().load(category.get(i).getImage()).into(myViewHolder.Image);
+        myViewHolder.Name.setText(category.get(i).getName());
 
-        final String getNameCategory = category.get(i).getName();
         final String getDescriptionCategory = category.get(i).getDescription();
-        final String getImageCategory = category.get(i).getImage();
         final String getIconImageCategory = category.get(i).getIconImage();
-        final String getKeyCategory = category.get(i).getKey();
+        final String getImageCategory = category.get(i).getImage();
+        final String getNameCategory = category.get(i).getName();
+//        final String getKeyCategory = category.get(i).getKey();
 
         myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent startGame = new Intent(context, StartGameActivity.class);
 
+
+
 //                startGame.putExtra("IconImage", getIconImageCategory);
+//                startGame.putExtra("Icon", getImageCategory);
+
+//                Common.categoryId = ;
+                startGame.putExtra("Description", getDescriptionCategory);
                 startGame.putExtra("Name", getNameCategory);
-                startGame.putExtra("Key", getKeyCategory);
+//                Common.categoryId = myViewHolder.getAdapterPosition();
+
+//                Common.categoryId = myViewHolder.setOnClickListener(view -> delete(viewHolder.getAdapterPosition()));
+//                startGame.putExtra("Key", getKeyCategory);
+//                startGame.putExtra("Key", getKeyCategory);
 //                editMemo.putExtra("titledoes", getTitleDoes);
 //                editMemo.putExtra("descdoes", getDescDoes);
 //                editMemo.putExtra("datedoes", getDateDoes);

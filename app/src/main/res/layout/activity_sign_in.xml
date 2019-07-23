@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".SignInActivity">
 
-    <androidx.cardview.widget.CardView
+    <android.support.v7.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -79,11 +79,11 @@
                     android:layout_height="40dp"
                     android:background="@color/colorPrimaryDark"
                     android:padding="8dp"
-                    app:srcCompat="@drawable/ic_mail_outline_white_24dp"
+                    app:srcCompat="@drawable/ic_person_outline_white_24dp"
                     android:tint="@color/white" />
 
                 <EditText
-                    android:id="@+id/signin_email"
+                    android:id="@+id/signin_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/imgView_usernameIcon"
@@ -91,8 +91,8 @@
                     android:layout_toRightOf="@+id/imgView_usernameIcon"
                     android:background="@drawable/bg_input_general"
                     android:fontFamily="@font/ml"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
+                    android:hint="Username"
+                    android:inputType="text"
                     android:maxLines="1"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
@@ -156,24 +156,13 @@
                 android:layout_below="@+id/signin_button"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginRight="10dp">
-
-                <Button
-                    android:id="@+id/forgot_password_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/color_transparent"
-                    android:fontFamily="@font/ml"
-                    android:text="FORGET PASSWORD?"
-                    android:textAllCaps="true"
-                    android:textColor="@color/text_color"
-                    android:textSize="13sp" />
+                android:layout_marginRight="10dp" >
 
                 <Button
                     android:id="@+id/signup_account_button"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:textAlignment="center"
                     android:background="@color/color_transparent"
                     android:fontFamily="@font/ml"
                     android:text="SIGN UP ACCOUNT"
@@ -186,5 +175,5 @@
         </RelativeLayout>
 
 
-    </androidx.cardview.widget.CardView>
+    </android.support.v7.widget.CardView>
 </RelativeLayout>

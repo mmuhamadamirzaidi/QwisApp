@@ -11,13 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DoneGameActivity"></activity>
+        <activity android:name=".DoneGameActivity" />
         <activity android:name=".PlayingGameActivity" />
         <activity android:name=".StartGameActivity" />
         <activity android:name=".RankingActivity" />
         <activity android:name=".CategoryActivity" />
         <activity android:name=".IntroductionsActivity" />
-        <activity android:name=".SetupProfileActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity" />
@@ -31,9 +30,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat" />
     </application>
 
 </manifest>

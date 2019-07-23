@@ -17,4 +17,6 @@
 
     <color name="light_gray">#EDE7F6</color>
     <color name="lightish_gray">#dfd4ef</color>
+
+    <color name="backgroundColor">#F4F4F4</color>
 </resources>
