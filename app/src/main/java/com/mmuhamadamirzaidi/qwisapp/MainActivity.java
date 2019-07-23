@@ -15,8 +15,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         CategoryMenu = (Button)findViewById(R.id.categoryMenu);
         RankingMenu = (Button)findViewById(R.id.rankingMenu);
 
@@ -40,12 +38,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void SendUserToSetupActivity() {
-        Intent setupIntent = new Intent(MainActivity.this, SetupProfileActivity.class);
-        setupIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(setupIntent);
-        finish();
-    }
+//    private void SendUserToSetupActivity() {
+//        Intent setupIntent = new Intent(MainActivity.this, SetupProfileActivity.class);
+//        setupIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        startActivity(setupIntent);
+//        finish();
+//    }
 
     private void SendUserToSignInActivity() {
 

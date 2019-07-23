@@ -17,7 +17,6 @@
         <activity android:name=".RankingActivity" />
         <activity android:name=".CategoryActivity" />
         <activity android:name=".IntroductionsActivity" />
-        <activity android:name=".SetupProfileActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity" />

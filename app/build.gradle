@@ -37,6 +37,7 @@ dependencies {
 
     //Firebase Library
     implementation 'com.google.firebase:firebase-database:17.0.0'
+    implementation 'com.google.firebase:firebase-storage:17.0.0'
 
     //Others Library
     implementation 'de.hdodenhof:circleimageview:3.0.0'
