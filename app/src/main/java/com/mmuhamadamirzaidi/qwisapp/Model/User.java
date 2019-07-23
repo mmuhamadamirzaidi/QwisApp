@@ -1,6 +1,7 @@
 package com.mmuhamadamirzaidi.qwisapp.Model;
 
 public class User {
+
     private String Username, Email, Password;
 
     public User() {

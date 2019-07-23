@@ -1,14 +1,13 @@
 package com.mmuhamadamirzaidi.qwisapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.drawable.RoundedBitmapDrawable;
-import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
-
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.support.v7.app.AppCompatActivity;
 import android.transition.Fade;
 import android.transition.TransitionInflater;
 import android.view.View;
@@ -16,7 +15,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,12 +22,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
-import com.mmuhamadamirzaidi.qwisapp.Model.Category;
 import com.mmuhamadamirzaidi.qwisapp.Model.Questions;
-import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
-import java.util.Collection;
 import java.util.Collections;
 
 import de.hdodenhof.circleimageview.CircleImageView;
