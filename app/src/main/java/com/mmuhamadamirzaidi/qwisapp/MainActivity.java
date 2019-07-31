@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         CategoryMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent categoryIntent = new Intent(MainActivity.this, CategoryActivity.class);
+                Intent categoryIntent = new Intent(MainActivity.this, Home.class);
                 startActivity(categoryIntent);
             }
         });

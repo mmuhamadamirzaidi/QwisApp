@@ -1,52 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingRight="20dp"
-    android:paddingLeft="20dp"
-    tools:context=".MainActivity">
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context=".CategoryFragment">
 
     <LinearLayout
-        android:layout_marginTop="26dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="horizontal"
-        android:id="@+id/linlaycategorypage"
+        android:id="@+id/haloo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/categorypage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/mm"
             android:text="Category"
-            android:textColor="#5E5E5E"
+            android:textColor="@color/textColorPrimaryDark"
             android:textSize="24dp" />
 
     </LinearLayout>
 
+    //Main Menu
+
     <LinearLayout
-        android:id="@+id/linlaysubcategorypage"
+        android:id="@+id/titlemenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linlaycategorypage">
+        app:layout_constraintTop_toBottomOf="@+id/haloo">
 
         <TextView
-            android:id="@+id/subcategorypage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="List Of Category"
             android:fontFamily="@font/ml"
-            android:textColor="#5E5E5E"
+            android:text="List Category"
+            android:textColor="@color/textColorPrimary"
             android:textSize="18dp" />
 
         <View
@@ -54,30 +53,31 @@
             android:layout_height="2dp"
             android:layout_gravity="center"
             android:layout_marginLeft="8dp"
-            android:background="#7a8b8b8b"></View>
+            android:background="@color/textColorPrimary"></View>
 
     </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
+
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linlaysubcategorypage" >
+        app:layout_constraintTop_toBottomOf="@+id/titlemenu">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/listcategory"
+            android:id="@+id/listCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
         </android.support.v7.widget.RecyclerView>
 
         <TextView
-            android:id="@+id/endpage"
             android:textSize="16sp"
-            android:textColor="#9A9A9A"
+            android:textColor="@color/textColorAccent"
             android:fontFamily="@font/ml"
             android:layout_marginTop="20dp"
             android:text="No More Category"
@@ -87,5 +87,6 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>

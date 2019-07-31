@@ -3,8 +3,12 @@ package com.mmuhamadamirzaidi.qwisapp;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.TextView;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -14,8 +18,14 @@ import com.mmuhamadamirzaidi.qwisapp.Common.Common;
 import com.mmuhamadamirzaidi.qwisapp.Interface.RankingCallBack;
 import com.mmuhamadamirzaidi.qwisapp.Model.QuestionScore;
 import com.mmuhamadamirzaidi.qwisapp.Model.Ranking;
+import com.mmuhamadamirzaidi.qwisapp.ViewHolder.RankingViewHolder;
 
 public class RankingActivity extends AppCompatActivity {
+
+    TextView categorypage, subcategorypage, endpage;
+    RecyclerView rankingList;
+    LinearLayoutManager layoutManager;
+    FirebaseRecyclerAdapter<Ranking, RankingViewHolder> adapter;
 
     FirebaseDatabase database;
     DatabaseReference questionScore, rankingTable;
@@ -26,9 +36,23 @@ public class RankingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
 
+//        categorypage = findViewById(R.id.categorypage);
+//        subcategorypage = findViewById(R.id.subcategorypage);
+        endpage = findViewById(R.id.endpage);
+
         database = FirebaseDatabase.getInstance();
         questionScore = database.getReference("Question_Score");
         rankingTable = database.getReference("Ranking");
+
+        //Init view
+        rankingList = (RecyclerView)findViewById(R.id.rankingList);
+        layoutManager = new LinearLayoutManager(this);
+        rankingList.setHasFixedSize(true);
+
+        //Order by childsort with ascending, so, need to reverse Recycler data
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
+        rankingList.setLayoutManager(layoutManager);
 
         //Implement callback
         updateScore(Common.currentUser.getUsername(), new RankingCallBack<Ranking>() {
@@ -41,6 +65,19 @@ public class RankingActivity extends AppCompatActivity {
 //                showRanking();
             }
         });
+
+        //Set adapter
+        adapter = new FirebaseRecyclerAdapter<Ranking, RankingViewHolder>(Ranking.class, R.layout.item_ranking, RankingViewHolder.class, rankingTable.orderByChild("score")) {
+            @Override
+            protected void populateViewHolder(RankingViewHolder viewHolder, Ranking model, int position) {
+
+//                viewHolder.txt_name.setText(model.getUsername());
+//                viewHolder.txt_score.setText(model.getScore());
+
+                //Fix crash when click to item
+//                viewHolder.setItemClickListener(new ItemClickListener);
+            }
+        };
     }
 
     private void showRanking() {
