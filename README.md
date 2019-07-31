@@ -8,9 +8,9 @@ Qwis app enable student test their knowledge by using quiz game. It is fun, addi
 
 ### Game Play (Done)
 
-## Ranking All Users (Ongoing)
+### Ranking All Users (Done)
 
-### Score Board
+## Score Board (Ongoing)
 
 ### Notifications
  1) Realtime Update Notification

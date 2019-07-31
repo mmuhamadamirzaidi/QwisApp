@@ -19,4 +19,9 @@
     <color name="lightish_gray">#dfd4ef</color>
 
     <color name="backgroundColor">#F4F4F4</color>
+
+    //Text
+    <color name="textColorPrimaryDark">#2c2c2c</color>
+    <color name="textColorPrimary">#4b4b4c</color>
+    <color name="textColorAccent">#808080</color>
 </resources>

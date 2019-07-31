@@ -2,23 +2,23 @@ package com.mmuhamadamirzaidi.qwisapp.Model;
 
 public class QuestionScore {
 
-    private String Question_Score, User, Score;
+    private String QuestionScore, User, Score;
 
     public QuestionScore() {
     }
 
-    public QuestionScore(String question_Score, String user, String score) {
-        Question_Score = question_Score;
+    public QuestionScore(String questionScore, String user, String score) {
+        QuestionScore = questionScore;
         User = user;
         Score = score;
     }
 
-    public String getQuestion_Score() {
-        return Question_Score;
+    public String getQuestionScore() {
+        return QuestionScore;
     }
 
-    public void setQuestion_Score(String question_Score) {
-        Question_Score = question_Score;
+    public void setQuestionScore(String questionScore) {
+        QuestionScore = questionScore;
     }
 
     public String getUser() {

@@ -5,7 +5,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.mmuhamadamirzaidi.qwisapp"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -38,6 +38,8 @@ dependencies {
     //Firebase Library
     implementation 'com.google.firebase:firebase-database:17.0.0'
     implementation 'com.google.firebase:firebase-storage:17.0.0'
+
+    implementation 'com.firebaseui:firebase-ui-database:1.2.0'
 
     //Others Library
     implementation 'de.hdodenhof:circleimageview:3.0.0'
