@@ -35,7 +35,7 @@ public class IntroductionsActivity extends AppCompatActivity {
 
     if (restorePrefData()) {
 
-      Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
+      Intent mainActivity = new Intent(getApplicationContext(), Home.class);
       startActivity(mainActivity);
       finish();
     }
