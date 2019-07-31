@@ -15,7 +15,6 @@
         <activity android:name=".DoneGameActivity" />
         <activity android:name=".PlayingGameActivity" />
         <activity android:name=".StartGameActivity" />
-        <activity android:name=".RankingActivity" />
         <activity android:name=".IntroductionsActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SignInActivity" />
