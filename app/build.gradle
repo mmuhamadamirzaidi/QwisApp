@@ -6,11 +6,7 @@ android {
     defaultConfig {
         applicationId "com.mmuhamadamirzaidi.qwisapp"
         minSdkVersion 21
-<<<<<<< HEAD
-        targetSdkVersion 28
-=======
         targetSdkVersion 26
->>>>>>> master
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

@@ -11,18 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-        <activity android:name=".Home"></activity>
-=======
-        <activity android:name=".ScoreDetailActivity"></activity>
+
+        <activity android:name=".ScoreDetailActivity" />
         <activity android:name=".Home" />
->>>>>>> master
         <activity android:name=".DoneGameActivity" />
         <activity android:name=".PlayingGameActivity" />
         <activity android:name=".StartGameActivity" />
         <activity android:name=".IntroductionsActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity" />
+
         <activity
             android:name=".SplashActivity"
             android:configChanges="orientation"

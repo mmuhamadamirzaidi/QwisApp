@@ -11,7 +11,7 @@
     <style name="QuizCardQuestion">
         <item name="background">@color/colorPrimaryDark</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
-        <item name="android:textColor">@color/cardview_light_background</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:padding">@dimen/activity_horizontal_margin</item>
     </style>
 
