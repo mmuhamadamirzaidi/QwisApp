@@ -13,7 +13,7 @@ import com.mmuhamadamirzaidi.qwisapp.R;
 public class CategoryViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     public TextView Name, Description;
-    public ImageView Image, IconImage;
+    public ImageView IconImage;
     public RelativeLayout Container;
 
     private ItemClickListener itemClickListener;
@@ -26,7 +26,6 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder implements View.
 
         Container = itemView.findViewById(R.id.container);
         IconImage = itemView.findViewById(R.id.categoryIconImage);
-        Image = itemView.findViewById(R.id.categoryImage);
 
         itemView.setOnClickListener(this);
     }
