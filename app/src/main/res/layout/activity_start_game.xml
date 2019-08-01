@@ -5,236 +5,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".StartGameActivity"
+    android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@color/colorPrimaryDark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/categoryprofileimage"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="26dp"
-        android:src="@drawable/profile"
-        app:civ_border_color="#ffffff"
-        app:civ_border_width="2dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.56882256" />
 
     <TextView
         android:id="@+id/categorytitleheader"
-        android:text="Category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="37dp"
-        android:textColor="#FFF"
-        android:fontFamily="@font/mr"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/categoryprofileimage"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:text="DescriptionDescriptionDescriptionDescrip"
-        android:maxLength="32"
-        android:id="@+id/categorysubtitleheader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:fontFamily="@font/ml"
-        android:textColor="#FFF"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/categoryprofileimage"
-        app:layout_constraintTop_toBottomOf="@+id/categorytitleheader" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="165dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/bg_dashboard_main_menus"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoryprofileimage">
-
-        <TextView
-            android:id="@+id/mainmenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="12dp"
-            android:fontFamily="@font/mr"
-            android:text="Menu"
-            android:textColor="#818181"
-            android:textSize="16sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <!--<LinearLayout-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:gravity="center"-->
-            <!--android:orientation="vertical">-->
-
-            <!--<de.hdodenhof.circleimageview.CircleImageView-->
-            <!--android:id="@+id/memo"-->
-            <!--android:layout_width="60dp"-->
-            <!--android:layout_height="60dp"-->
-            <!--android:layout_marginBottom="8dp"-->
-            <!--android:src="@drawable/dashboard_memo"-->
-            <!--app:civ_border_color="@color/colorPrimaryDark"-->
-            <!--app:civ_border_width="2dp" />-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/review"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:fontFamily="@font/mm"-->
-            <!--android:text="My Memo"-->
-            <!--android:textColor="@color/colorPrimaryDark"-->
-            <!--android:textSize="13sp" />-->
-
-            <!--</LinearLayout>-->
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/menuone"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/dashboard_instructions"
-                    app:civ_border_color="@color/colorPrimaryDark"
-                    app:civ_border_width="2dp" />
-
-                <TextView
-                    android:id="@+id/titlemenuone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/mm"
-                    android:text="Instructions"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="13sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/menutwo"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/dashboard_statistics"
-                    app:civ_border_color="@color/colorPrimaryDark"
-                    app:civ_border_width="2dp" />
-
-                <TextView
-                    android:id="@+id/titlemenutwo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/mm"
-                    android:text="Ranking"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="13sp" />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/categoryimageicon"
-        android:layout_width="154dp"
-        android:layout_height="154dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/iconquiz"
-        app:civ_border_color="@color/colorPrimaryDark"
-        app:civ_border_width="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"/>
-
-    <TextView
-        android:id="@+id/resultstitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:text="Category"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/mm"
+        android:text="TextView"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="22sp"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoryimageicon" />
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <TextView
-        android:id="@+id/resultssubtitle"
-        android:layout_width="wrap_content"
+        android:lineSpacingExtra="16dp"
+        android:id="@+id/categorysubtitleheader"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/ml"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
-        android:text="Let's feel the pain!"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        android:fontFamily="@font/ml"
         android:textAlignment="center"
-        android:textColor="#A1A1A1"
-        android:textSize="16sp"
-        android:lineSpacingExtra="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultstitle" />
+        app:layout_constraintTop_toBottomOf="@+id/categorytitleheader"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <ImageView
+        android:id="@+id/intro_img"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/categorytitleheader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/introductions_components"/>
+
+    <Button
+        android:id="@+id/buttoninstructions"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_button_play_quiz"
+        android:fontFamily="@font/mm"
+        android:text="INSTRUCTIONS"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttoncategoryplayquiz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttoncategoryplayquiz"
-        android:layout_width="194dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:textSize="20sp"
-        android:textColor="#FFF"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="64dp"
+        android:text="PLAY QUIZ"
+        android:textColor="#fff"
         android:fontFamily="@font/mm"
-        android:text="Play Quiz"
-        android:textAllCaps="false"
         android:background="@drawable/bg_button_play_quiz"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultssubtitle" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
