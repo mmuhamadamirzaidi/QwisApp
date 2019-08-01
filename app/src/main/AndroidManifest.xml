@@ -17,7 +17,6 @@
         <activity android:name=".PlayingGameActivity" />
         <activity android:name=".StartGameActivity" />
         <activity android:name=".IntroductionsActivity" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity" />
         <activity
@@ -30,6 +29,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".BroadcastReceiver.AlarmReceiver" />
     </application>
 
 </manifest>
