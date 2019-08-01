@@ -90,6 +90,7 @@ public class CategoryFragment extends Fragment {
 
                         Intent startGame = new Intent(getActivity(), StartGameActivity.class);
                         Common.categoryId = adapter.getRef(position).getKey();
+                        Common.categoryName = model.getName();
 
                         startGame.putExtra("Name", getName);
                         startGame.putExtra("Description", getDescription);

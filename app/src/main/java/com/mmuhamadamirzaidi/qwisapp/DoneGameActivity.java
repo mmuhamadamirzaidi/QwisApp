@@ -91,7 +91,8 @@ public class DoneGameActivity extends AppCompatActivity {
                 .setValue(new QuestionScore(String.format("%s_%s", Common.currentUser.getUsername(),
                         Common.categoryId),
                         Common.currentUser.getUsername(),
-                        String.valueOf(score)));
+                        String.valueOf(score),
+                        Common.categoryId, Common.categoryName));
         }
     }
 
