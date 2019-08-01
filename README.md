@@ -13,5 +13,5 @@ Qwis app enable student test their knowledge by using quiz game. It is fun, addi
 ### Score Board (Done)
 
 ## Notifications
- 1) Daily Notification (Ongoing)
- 2) Push Notification
+ 1) Daily Notification (Done)
+ 2) Push Notification (Ongoing)
