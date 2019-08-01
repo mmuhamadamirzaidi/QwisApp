@@ -30,11 +30,7 @@
             android:layout_marginLeft="32dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/mm"
-<<<<<<< HEAD
             android:text="Category Name"
-=======
-            android:text="Username"
->>>>>>> master
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
 

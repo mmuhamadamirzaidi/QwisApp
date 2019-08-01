@@ -1,6 +1,10 @@
 package com.mmuhamadamirzaidi.qwisapp;
 
 
+<<<<<<< HEAD
+=======
+import android.content.Intent;
+>>>>>>> master
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -87,7 +91,11 @@ public class RankingFragment extends Fragment {
         //Set adapter
         adapter = new FirebaseRecyclerAdapter<Ranking, RankingViewHolder>(Ranking.class, R.layout.item_ranking, RankingViewHolder.class, rankingTable.orderByChild("score")) {
             @Override
+<<<<<<< HEAD
             protected void populateViewHolder(RankingViewHolder viewHolder, Ranking model, int position) {
+=======
+            protected void populateViewHolder(RankingViewHolder viewHolder, final Ranking model, int position) {
+>>>>>>> master
 
                 viewHolder.txt_name.setText(model.getUsername());
                 viewHolder.txt_score.setText(String.valueOf(model.getScore()));
@@ -96,7 +104,13 @@ public class RankingFragment extends Fragment {
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
+<<<<<<< HEAD
 
+=======
+                        Intent scoreDetail = new Intent(getActivity(), ScoreDetailActivity.class);
+                        scoreDetail.putExtra("viewUser", model.getUsername());
+                        startActivity(scoreDetail);
+>>>>>>> master
                     }
                 });
             }

@@ -119,7 +119,7 @@ public class IntroductionsActivity extends AppCompatActivity {
 
         //open main activity
 
-        Intent dashboardActivity = new Intent(getApplicationContext(), MainActivity.class);
+        Intent dashboardActivity = new Intent(getApplicationContext(), Home.class);
         startActivity(dashboardActivity);
         // also we need to save a boolean value to storage so next time when the user run the app
         // we could know that he is already checked the intro screen activity

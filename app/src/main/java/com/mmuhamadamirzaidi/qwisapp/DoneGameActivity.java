@@ -69,7 +69,7 @@ public class DoneGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(DoneGameActivity.this, "Try Again!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(DoneGameActivity.this, MainActivity.class);
+                Intent intent = new Intent(DoneGameActivity.this, Home.class);
                 startActivity(intent);
                 finish();
             }
@@ -91,7 +91,8 @@ public class DoneGameActivity extends AppCompatActivity {
                 .setValue(new QuestionScore(String.format("%s_%s", Common.currentUser.getUsername(),
                         Common.categoryId),
                         Common.currentUser.getUsername(),
-                        String.valueOf(score)));
+                        String.valueOf(score),
+                        Common.categoryId, Common.categoryName));
         }
     }
 
