@@ -15,6 +15,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,11 +33,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class StartGameActivity extends AppCompatActivity {
 
-    private TextView CategoryTitle, CategorySubtitle, CategoryTitleHeader, CategorySubtitleHeader;
+    private TextView CategoryTitleHeader, CategorySubtitleHeader;
 
-    private Button ButtonCategoryPlayQuiz;
-    private Animation AnimationOne, AnimationTwo, AnimationThree;
-    private CircleImageView CategoryImageProfile, CategoryImageIcon;
+    private Button ButtonCategoryPlayQuiz, ButtonInstructions;
 
     FirebaseDatabase database;
     DatabaseReference questions;
@@ -50,37 +49,19 @@ public class StartGameActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         questions = database.getReference("Questions");
 
-        CategoryImageProfile = findViewById(R.id.categoryprofileimage);
         CategoryTitleHeader = findViewById(R.id.categorytitleheader);
         CategorySubtitleHeader = findViewById(R.id.categorysubtitleheader);
 
-        CategoryImageIcon = findViewById(R.id.categoryimageicon);
-        CategoryTitle = findViewById(R.id.resultstitle);
-        CategorySubtitle = findViewById(R.id.resultssubtitle);
         ButtonCategoryPlayQuiz = findViewById(R.id.buttoncategoryplayquiz);
+        ButtonInstructions = findViewById(R.id.buttoninstructions);
 
         //Get a value from previous page
         CategoryTitleHeader.setText(getIntent().getStringExtra("Name"));
         CategorySubtitleHeader.setText(getIntent().getStringExtra("Description"));
 
-        CategoryTitle.setText(getIntent().getStringExtra("Name"));
-
         if (Build.VERSION.SDK_INT>=21) {
             setupWindowAnimations();
         }
-
-        //Load animations
-        AnimationOne = AnimationUtils.loadAnimation(this, R.anim.animation_dashboard_one);
-        AnimationTwo = AnimationUtils.loadAnimation(this, R.anim.animation_dashboard_two);
-        AnimationThree = AnimationUtils.loadAnimation(this, R.anim.animation_dashboard_three);
-
-        //Pass animations
-        CategoryImageIcon.startAnimation(AnimationOne);
-
-        CategoryTitle.startAnimation(AnimationTwo);
-        CategorySubtitle.startAnimation(AnimationTwo);
-
-        ButtonCategoryPlayQuiz.startAnimation(AnimationThree);
 
         //Load questions once Play Quiz button clicked
         loadQuestions(Common.categoryId);
@@ -92,6 +73,13 @@ public class StartGameActivity extends AppCompatActivity {
                 Intent intent = new Intent(StartGameActivity.this, PlayingGameActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        ButtonInstructions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(StartGameActivity.this, "Read Instructions!", Toast.LENGTH_SHORT).show();
             }
         });
     }
