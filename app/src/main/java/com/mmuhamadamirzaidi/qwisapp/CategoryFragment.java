@@ -78,29 +78,21 @@ public class CategoryFragment extends Fragment {
                 viewHolder.Name.setText(model.getName());
                 viewHolder.Description.setText(model.getDescription());
 
-                Picasso.get().load(model.getImage()).into(viewHolder.Image);
                 Picasso.get().load(model.getIconImage()).into(viewHolder.IconImage);
 
                 final String getName = model.getName();
                 final String getDescription = model.getDescription();
-//                final String getImage = model.getImage();
-//                final String getIconImage = model.getIconImage();
 
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
 //                        Toast.makeText(getActivity(), String.format("%s | %s", adapter.getRef(position).getKey(), model.getName()), Toast.LENGTH_SHORT).show();
 
-//
-
                         Intent startGame = new Intent(getActivity(), StartGameActivity.class);
                         Common.categoryId = adapter.getRef(position).getKey();
 
                         startGame.putExtra("Name", getName);
                         startGame.putExtra("Description", getDescription);
-
-//                        startGame.putExtra("Image", getImage);
-//                        startGame.putExtra("IconImage", getIconImage);
 
                         startActivity(startGame);
                     }

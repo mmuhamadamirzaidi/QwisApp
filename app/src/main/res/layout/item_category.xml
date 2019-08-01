@@ -47,18 +47,6 @@
             android:lineSpacingExtra="8dp"
             android:text="Description"
             android:textColor="#ADADAD" />
-
-        <ImageView
-            android:id="@+id/categoryImage"
-            android:layout_alignStart="@+id/categoryName"
-            android:layout_alignLeft="@id/categoryName"
-            android:layout_marginRight="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_below="@id/categoryDescription"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/loading"
-            android:scaleType="centerCrop" />
     </RelativeLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
