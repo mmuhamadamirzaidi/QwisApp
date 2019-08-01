@@ -17,7 +17,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.mmuhamadamirzaidi.qwisapp.BroadcastReceiver.AlarmReceiver;
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
 import com.mmuhamadamirzaidi.qwisapp.Model.User;
 
@@ -40,7 +39,7 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        registerAlarm();
+//        registerAlarm();
 
         loadingBar = new ProgressDialog(this);
 
@@ -78,18 +77,18 @@ public class SignInActivity extends AppCompatActivity {
 //        });
     }
 
-    private void registerAlarm() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 5);
-        calendar.set(Calendar.MINUTE, 19);
-        calendar.set(Calendar.SECOND, 0);
-
-        Intent intent = new Intent(SignInActivity.this, AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(SignInActivity.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        AlarmManager alarmManager = (AlarmManager)this.getSystemService(this.ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
-    }
+//    private void registerAlarm() {
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.set(Calendar.HOUR_OF_DAY, 5);
+//        calendar.set(Calendar.MINUTE, 19);
+//        calendar.set(Calendar.SECOND, 0);
+//
+//        Intent intent = new Intent(SignInActivity.this, AlarmReceiver.class);
+//        PendingIntent pendingIntent = PendingIntent.getBroadcast(SignInActivity.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+//
+//        AlarmManager alarmManager = (AlarmManager)this.getSystemService(this.ALARM_SERVICE);
+//        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+//    }
 
     private void SignInAccount(final String user, final String password) {
 

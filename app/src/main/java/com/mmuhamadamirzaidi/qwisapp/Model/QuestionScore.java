@@ -1,21 +1,11 @@
 package com.mmuhamadamirzaidi.qwisapp.Model;
 
 public class QuestionScore {
-
-<<<<<<< HEAD
-    private String QuestionScore, User, Score;
-=======
     private String QuestionScore, User, Score, CategoryId, CategoryName;
->>>>>>> master
 
     public QuestionScore() {
     }
-
-<<<<<<< HEAD
-    public QuestionScore(String questionScore, String user, String score) {
-=======
     public QuestionScore(String questionScore, String user, String score, String categoryId, String categoryName) {
->>>>>>> master
         QuestionScore = questionScore;
         User = user;
         Score = score;

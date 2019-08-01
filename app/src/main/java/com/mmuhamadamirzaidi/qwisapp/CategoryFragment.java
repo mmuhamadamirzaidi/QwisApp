@@ -11,9 +11,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -23,8 +20,6 @@ import com.mmuhamadamirzaidi.qwisapp.Interface.ItemClickListener;
 import com.mmuhamadamirzaidi.qwisapp.Model.Category;
 import com.mmuhamadamirzaidi.qwisapp.ViewHolder.CategoryViewHolder;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 
 /**
@@ -90,10 +85,7 @@ public class CategoryFragment extends Fragment {
 
                         Intent startGame = new Intent(getActivity(), StartGameActivity.class);
                         Common.categoryId = adapter.getRef(position).getKey();
-<<<<<<< HEAD
-=======
                         Common.categoryName = model.getName();
->>>>>>> master
 
                         startGame.putExtra("Name", getName);
                         startGame.putExtra("Description", getDescription);

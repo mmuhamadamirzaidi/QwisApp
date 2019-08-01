@@ -10,4 +10,6 @@ public class Common {
     public static String categoryId, categoryName;
     public static User currentUser;
     public static List<Questions> ListQuestion = new ArrayList<>();
+
+//    public static final String STR_PUSH = "pushNotification";
 }
