@@ -1,7 +1,5 @@
 package com.mmuhamadamirzaidi.qwisapp;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,8 +18,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
 import com.mmuhamadamirzaidi.qwisapp.Model.User;
 
-import java.util.Calendar;
-
 public class SignInActivity extends AppCompatActivity {
 
     Button SignInButton; //Use for sign up & sign in options
@@ -30,6 +26,8 @@ public class SignInActivity extends AppCompatActivity {
     Button SignUpAccountButton; //Use for redirect users to desire page
 
     private ProgressDialog loadingBar;
+
+    String Role;
 
     FirebaseDatabase database;
     DatabaseReference users;
@@ -104,11 +102,30 @@ public class SignInActivity extends AppCompatActivity {
                     if (!user.isEmpty()) {
                         User signin = dataSnapshot.child(user).getValue(User.class);
                         if (signin.getPassword().equals(password)) {
-                            Toast.makeText(SignInActivity.this, "Sign in successfully!", Toast.LENGTH_SHORT).show();
-                            Common.currentUser = signin;
-                            SendUserToIntroActivity();
-                            finish();
-                            loadingBar.dismiss();
+                            if (signin.getRole().equals("Student")){
+                                Toast.makeText(SignInActivity.this, "Sign in successfully! Student!", Toast.LENGTH_SHORT).show();
+                                Common.currentUser = signin;
+                                SendUserToIntroActivity();
+                                finish();
+                                loadingBar.dismiss();
+                            }
+                            else if(signin.getRole().equals("Lecturer")){
+                                Toast.makeText(SignInActivity.this, "Sign in successfully! Lecturer!", Toast.LENGTH_SHORT).show();
+                                Common.currentUser = signin;
+                                SendUserToRolePageTest();
+                                finish();
+                                loadingBar.dismiss();
+                            }
+                            else if(signin.getRole().equals("Administrator")){
+                                Toast.makeText(SignInActivity.this, "Sign in successfully! Admin!", Toast.LENGTH_SHORT).show();
+                                Common.currentUser = signin;
+                                SendUserToRolePageAdmin();
+                                finish();
+                                loadingBar.dismiss();
+                            }
+                            else{
+                                Toast.makeText(SignInActivity.this, "You are not Qwis users!", Toast.LENGTH_SHORT).show();
+                            }
                         } else {
                             Toast.makeText(SignInActivity.this, "Password wrong!", Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
@@ -140,6 +157,20 @@ public class SignInActivity extends AppCompatActivity {
     private void SendUserToSignUpActivity() {
         Intent signupIntent = new Intent(SignInActivity.this, SignUpActivity.class);
         startActivity(signupIntent);
+    }
+
+    private void SendUserToRolePageTest() {
+        Intent roleIntent = new Intent(SignInActivity.this, TestRoleActivity.class);
+        roleIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(roleIntent);
+        finish();
+    }
+
+    private void SendUserToRolePageAdmin() {
+        Intent adminIntent = new Intent(SignInActivity.this, TestRoleAdminActivity.class);
+        adminIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(adminIntent);
+        finish();
     }
 
 }

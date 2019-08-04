@@ -2,15 +2,16 @@ package com.mmuhamadamirzaidi.qwisapp.Model;
 
 public class User {
 
-    private String Username, Email, Password;
+    private String Username, Email, Password, Role;
 
     public User() {
     }
 
-    public User(String username, String email, String password) {
+    public User(String username, String email, String password, String role) {
         Username = username;
         Email = email;
         Password = password;
+        Role = role;
     }
 
     public String getUsername() {
@@ -35,5 +36,13 @@ public class User {
 
     public void setPassword(String password) {
         Password = password;
+    }
+
+    public String getRole() {
+        return Role;
+    }
+
+    public void setRole(String role) {
+        Role = role;
     }
 }

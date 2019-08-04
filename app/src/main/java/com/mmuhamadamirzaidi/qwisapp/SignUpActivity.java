@@ -24,6 +24,8 @@ public class SignUpActivity extends AppCompatActivity {
 
     Button SignInAccountButton; //Use for redirect users to desire page
 
+    String Role = "Student";
+
     private ProgressDialog loadingBar;
 
     FirebaseDatabase database;
@@ -74,7 +76,7 @@ public class SignUpActivity extends AppCompatActivity {
     private void SignUpAccount() {
         final User user = new User(SignUpUsername.getText().toString().trim(),
         SignUpEmail.getText().toString().trim(),
-        SignUpPassword.getText().toString().trim());
+        SignUpPassword.getText().toString().trim(), Role);
 
         Boolean valid = true;
 
