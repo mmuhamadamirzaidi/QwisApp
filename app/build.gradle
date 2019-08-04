@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.firebase-perf'
 
 android {
     compileSdkVersion 28
@@ -37,6 +38,7 @@ dependencies {
 
     //Firebase Library
     implementation 'com.google.firebase:firebase-database:16.1.0'
+    implementation 'com.google.firebase:firebase-perf:16.2.5'
 
     implementation 'com.firebaseui:firebase-ui-database:1.2.0'
 

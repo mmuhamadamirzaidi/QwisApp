@@ -3,16 +3,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name = "android:windowNoTitle">true</item>
+        <item name = "windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <style name="QuizCardQuestion">
-        <item name="background">@color/colorPrimaryDark</item>
-        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
-        <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:padding">@dimen/activity_horizontal_margin</item>
     </style>
 
     <style name="QuizCardChoice" parent="Widget.AppCompat.Button.Borderless">
@@ -21,17 +16,62 @@
         <item name="android:padding">@dimen/activity_horizontal_margin</item>
     </style>
 
+    <style name="QuizPageFooter">
+        <item name="android:background">#F4F4F4</item>
+        <item name="android:padding">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="FullStatistics" parent="StatsLabels">
+    </style>
+
+    <style name="StatsLabels" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+
+    <style name="WelcomeHeadings" parent="StatsLabels" />
+
+    <style name="spinnerDropDownItemStyle" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:padding">@dimen/activity_vertical_margin</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem">
+        <item name="android:padding">0dp</item>
+        <item name="android:textAppearance">@style/StatsLabels</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="StatsContent" parent="TextAppearance.AppCompat.SearchResult.Subtitle">
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:paddingBottom">@dimen/activity_vertical_margin</item>
+    </style>
+
+    <style name="QuizCardQuestion">
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:textColor">@color/cardview_light_background</item>
+        <item name="android:padding">@dimen/activity_horizontal_margin</item>
+    </style>
+
     <style name="QuizCardChoice.OddChoice" parent="QuizCardChoice">
-        <item name="background">@color/white</item>
+        <item name="android:background">@color/white</item>
     </style>
 
     <style name="QuizCardChoice.EvenChoice" parent="QuizCardChoice">
-        <item name="background">@color/white</item>
+        <item name="android:background">@color/white</item>
     </style>
 
-    <style name="QuizPageFooter">
-        <item name="background">@color/backgroundColor</item>
-        <item name="android:padding">@dimen/activity_horizontal_margin</item>
+    <style name="QuizChoiceDivider">
+        <item name="android:layout_marginLeft">@dimen/divider_margin</item>
+        <item name="android:layout_marginRight">@dimen/divider_margin</item>
+        <item name="android:background">@color/light_gray</item>
+    </style>
+
+    <style name="StatsTitles" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:paddingBottom">@dimen/activity_vertical_margin</item>
     </style>
 
 </resources>

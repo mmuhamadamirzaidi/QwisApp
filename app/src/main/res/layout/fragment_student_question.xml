@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout tools:context=".Student.StudentQuestionFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/cardview_default_elevation"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardUseCompatPadding="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:gravity="center"
+                android:fontFamily="@font/mm"
+                android:id="@+id/question_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/QuizCardQuestion"/>
+
+
+            <Button
+                android:textSize="16sp"
+                android:gravity="center"
+                android:fontFamily="@font/ml"
+                android:id="@+id/choice1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/QuizCardChoice.OddChoice"
+                android:background="@drawable/question_button"
+                android:onClick="addQuestionScorer"/>
+
+            <include layout="@layout/divider"/>
+
+            <Button
+                android:textSize="16sp"
+                android:gravity="center"
+                android:fontFamily="@font/ml"
+                android:id="@+id/choice2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/QuizCardChoice.EvenChoice"
+                android:background="@drawable/question_button"
+                android:onClick="addQuestionScorer"/>
+
+            <include layout="@layout/divider"/>
+
+            <Button
+                android:textSize="16sp"
+                android:gravity="center"
+                android:fontFamily="@font/ml"
+                android:id="@+id/choice3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/QuizCardChoice.OddChoice"
+                android:background="@drawable/question_button"
+                android:onClick="addQuestionScorer"/>
+
+            <include layout="@layout/divider"/>
+
+            <Button
+                android:textSize="16sp"
+                android:gravity="center"
+                android:fontFamily="@font/ml"
+                android:id="@+id/choice4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/QuizCardChoice.EvenChoice"
+                android:background="@drawable/question_button"
+                android:onClick="addQuestionScorer"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

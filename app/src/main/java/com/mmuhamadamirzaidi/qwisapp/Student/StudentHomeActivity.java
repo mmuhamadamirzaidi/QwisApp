@@ -1,6 +1,8 @@
 package com.mmuhamadamirzaidi.qwisapp.Student;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
+import android.database.Cursor;
 import android.os.Build;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
@@ -16,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mmuhamadamirzaidi.qwisapp.Data.QuizDBContract;
 import com.mmuhamadamirzaidi.qwisapp.R;
 
 import java.io.IOException;
@@ -61,7 +64,11 @@ public class StudentHomeActivity extends AppCompatActivity {
         btn_play_offline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(StudentHomeActivity.this, "Play Offline Mode", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(StudentHomeActivity.this, "Play Offline Mode", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(StudentHomeActivity.this, StudentQuizActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
 
@@ -90,21 +97,41 @@ public class StudentHomeActivity extends AppCompatActivity {
         Instructions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(StudentHomeActivity.this, "Instruction", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(StudentHomeActivity.this, "Instruction", Toast.LENGTH_SHORT).show();
+
+                Intent instructionsIntent = new Intent(StudentHomeActivity.this, StudentInstructionActivity.class);
+                startActivity(instructionsIntent);
             }
         });
 
         Online.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(StudentHomeActivity.this, "Online Mode", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(StudentHomeActivity.this, "Online Mode", Toast.LENGTH_SHORT).show();
+
+                Intent onlineIntent = new Intent(StudentHomeActivity.this, StudentCategoryActivity.class);
+                startActivity(onlineIntent);
             }
         });
 
         Statistics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(StudentHomeActivity.this, "Statistics", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(StudentHomeActivity.this, "Statistics", Toast.LENGTH_SHORT).show();
+
+                Cursor cursor = getContentResolver().query(QuizDBContract.QuizEntry.CONTENT_URI, new String[]{QuizDBContract.QuizEntry._ID},
+                        null, null, null);
+                int cursorCount = 0;
+                if (cursor.moveToFirst()){
+                    cursorCount = cursor.getCount();
+                }
+                if (cursorCount<=0){
+                    Toast.makeText(StudentHomeActivity.this, R.string.no_stats, Toast.LENGTH_LONG).show();
+                } else {
+                    Intent intent = new Intent(StudentHomeActivity.this, StudentStatisticsActivity.class);
+                    startActivity(intent);
+                }
+                cursor.close();
             }
         });
     }

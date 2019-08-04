@@ -3,5 +3,45 @@
 
     <string name="question_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indard dummy text ever since the 1500s, when an unknown printer</string>
 
+    <!--statistics names-->
+    <string name="no_stats">No statistics available. Please complete at least 1 quiz first!</string>
+
+    <string name="average_time_correct">Average Time Correct Answers</string>
+    <string name="average_time_wrong">Average Time Wrong Answers</string>
+
+
+    <string name="total_questions_answered">Total answered questions</string>
+    <string name="correctly_answered">Correctly answered questions</string>
+
+    <!--post quiz cards-->
+    <string name="swipe_left_for_answers">Swipe left to view each question, your answer and correct answer. Use system back button to exit to dashboard.</string>
+    <string name="question">Question: </string>
+    <string name="you_selected">Your Answer</string>
+    <string name="correct_answer">Correct Answer</string>
+
+    <!--miscellaneous-->
+    <string name="no_choice">Answer Not Attempted</string>
+
+    <string name="format_percent">%1$.2f%%</string>
+    <string name="format_seconds">%1$.1f seconds</string>
+    <string name="format_integer">%1$.0f</string>
+    <string name="minus_sign">-</string>
+
+    <!--statistics headers-->
+    <string name="overall_performance">Overall Performance</string>
+    <string name="averages">Overall Statistics</string>
+    <string name="category_records">Category Statistics</string>
+
+    <string-array name="category_names">
+        <item>General</item>
+        <item>Science</item>
+        <item>World</item>
+        <item>History</item>
+        <item>Entertainment</item>
+        <item>Sports</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -14,7 +14,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Student.StudentPostQuizActivity"></activity>
+        <activity android:name=".Student.StudentCategoryActivity"></activity>
+        <activity android:name=".Student.StudentInstructionActivity" />
+        <activity android:name=".Utility" />
+        <activity android:name=".Student.StudentStatisticsActivity" />
+        <activity android:name=".Student.StudentPostQuizActivity" />
         <activity android:name=".Student.StudentQuizActivity" />
         <activity android:name=".Student.StudentHomeActivity" />
         <activity android:name=".LecturerHomeActivity" />
@@ -36,6 +40,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".Services.InsertRecordsService" />
+
+        <provider
+            android:name=".Data.QuizProvider"
+            android:authorities="com.mmuhamadamirzaidi.qwisapp.Data"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>

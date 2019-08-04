@@ -17,7 +17,13 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.mmuhamadamirzaidi.qwisapp.Data.QuizDBContract;
+import com.mmuhamadamirzaidi.qwisapp.Questions.IndividualQuestion;
+import com.mmuhamadamirzaidi.qwisapp.Questions.QuestionsHandling;
 import com.mmuhamadamirzaidi.qwisapp.R;
+import com.mmuhamadamirzaidi.qwisapp.Scoring.QuestionScorer;
+import com.mmuhamadamirzaidi.qwisapp.Scoring.QuizScorer;
+import com.mmuhamadamirzaidi.qwisapp.Services.InsertRecordsService;
 
 import java.util.ArrayList;
 
@@ -242,7 +248,7 @@ public class StudentQuizActivity extends AppCompatActivity {
         if (mQuestionNumber<mQuizSize-1) {
             mQuestionNumber += 1;
             setAndUpdateChoiceTextViews(mQuestionNumber);
-            mSecondsTextview.setTextColor(getResources().getColor(R.color.darker_gray));
+            mSecondsTextview.setTextColor(getResources().getColor(R.color.textColorPrimary));
             mCurrentSeconds=maxTime;
             mCountDownTimer.cancel();
             mCountDownTimer.start();
@@ -260,13 +266,13 @@ public class StudentQuizActivity extends AppCompatActivity {
     }
 
     private void updateFragmentTraditional(){
-        android.support.v4.app.Fragment fragmentQuestion = FragmentQuestion.getInstance(mCurrentDisplayQuestion);
+        android.support.v4.app.Fragment fragmentQuestion = StudentQuestionFragment.getInstance(mCurrentDisplayQuestion);
         getSupportFragmentManager().beginTransaction().replace(R.id.card_framelayout, fragmentQuestion).commit();
     }
 
     @TargetApi(13)
     private void updateFragmentAnimated(){
-        android.app.Fragment fragmentQuestion = FragmentQuestionHoneycomb.getInstance(mCurrentDisplayQuestion);
+        android.app.Fragment fragmentQuestion = StudentQuestionHoneycombFragment.getInstance(mCurrentDisplayQuestion);
         android.app.FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         if (mQuestionNumber>0) {
             fragmentTransaction
@@ -337,6 +343,7 @@ public class StudentQuizActivity extends AppCompatActivity {
                     Intent intent = new Intent(this, StudentPostQuizActivity.class);
                     intent.putExtra(StudentPostQuizActivity.KEY_QUIZ_SIZE, mQuizSize);
                     intent.putExtra(StudentPostQuizActivity.KEY_QUIZ_NUMBER, QUIZ_NUMBER);
+
                     startActivity(intent);
                 }
             } else {
