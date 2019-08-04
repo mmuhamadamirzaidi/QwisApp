@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestRoleAdminActivity"></activity>
+        <activity android:name=".LecturerHomeActivity"></activity>
+        <activity android:name=".TestRoleAdminActivity" />
         <activity android:name=".TestRoleActivity" />
         <activity android:name=".ScoreDetailActivity" />
         <activity android:name=".Home" />

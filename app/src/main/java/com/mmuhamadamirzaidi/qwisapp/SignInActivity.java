@@ -112,14 +112,14 @@ public class SignInActivity extends AppCompatActivity {
                             else if(signin.getRole().equals("Lecturer")){
                                 Toast.makeText(SignInActivity.this, "Sign in successfully! Lecturer!", Toast.LENGTH_SHORT).show();
                                 Common.currentUser = signin;
-                                SendUserToRolePageTest();
+                                SendUserToLecturerDashboard();
                                 finish();
                                 loadingBar.dismiss();
                             }
                             else if(signin.getRole().equals("Administrator")){
                                 Toast.makeText(SignInActivity.this, "Sign in successfully! Admin!", Toast.LENGTH_SHORT).show();
                                 Common.currentUser = signin;
-                                SendUserToRolePageAdmin();
+                                SendUserToAdminDashboard();
                                 finish();
                                 loadingBar.dismiss();
                             }
@@ -147,6 +147,12 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 
+    private void SendUserToSignUpActivity() {
+        Intent signupIntent = new Intent(SignInActivity.this, SignUpActivity.class);
+        startActivity(signupIntent);
+    }
+
+    //Student
     private void SendUserToIntroActivity() {
         Intent introIntent = new Intent(SignInActivity.this, IntroductionsActivity.class);
         introIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -154,19 +160,16 @@ public class SignInActivity extends AppCompatActivity {
         finish();
     }
 
-    private void SendUserToSignUpActivity() {
-        Intent signupIntent = new Intent(SignInActivity.this, SignUpActivity.class);
-        startActivity(signupIntent);
-    }
-
-    private void SendUserToRolePageTest() {
-        Intent roleIntent = new Intent(SignInActivity.this, TestRoleActivity.class);
+    //Lecturer
+    private void SendUserToLecturerDashboard() {
+        Intent roleIntent = new Intent(SignInActivity.this, LecturerHomeActivity.class);
         roleIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(roleIntent);
         finish();
     }
 
-    private void SendUserToRolePageAdmin() {
+    //Administrator
+    private void SendUserToAdminDashboard() {
         Intent adminIntent = new Intent(SignInActivity.this, TestRoleAdminActivity.class);
         adminIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(adminIntent);

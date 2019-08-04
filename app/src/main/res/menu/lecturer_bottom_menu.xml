@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_category"
+        android:title="Category"
+        android:enabled="true"
+        android:icon="@drawable/ic_dashboard_white_24dp"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_ranking"
+        android:title="Ranking"
+        android:enabled="true"
+        android:icon="@drawable/ic_assessment_white_24dp"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_student"
+        android:title="Students"
+        android:enabled="true"
+        android:icon="@drawable/ic_school_white_24dp"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_profile"
+        android:title="Profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_account_box_white_24dp"
+        app:showAsAction="ifRoom" />
+
+</menu>
