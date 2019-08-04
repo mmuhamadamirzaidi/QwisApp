@@ -1,27 +1,14 @@
 package com.mmuhamadamirzaidi.qwisapp;
 
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.mmuhamadamirzaidi.qwisapp.Common.Common;
-
-import java.util.Random;
-
-public class Home extends AppCompatActivity {
+public class AdminHomeActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
 
@@ -43,7 +30,7 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_admin_home);
 
 //        registrationNotification();
 
@@ -100,7 +87,7 @@ public class Home extends AppCompatActivity {
 //    }
 //
 //    private void showNotification(String title, String message) {
-//        Intent intent = new Intent(getApplicationContext(), Home.class);
+//        Intent intent = new Intent(getApplicationContext(), AdminHomeActivity.class);
 //        PendingIntent contentIntent = PendingIntent.getActivity(getBaseContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 //        NotificationCompat.Builder builder = new NotificationCompat.Builder(getBaseContext());
 //        builder.setAutoCancel(true)

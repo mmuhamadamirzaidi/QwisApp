@@ -161,7 +161,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void SendUserToMainActivity() {
-        Intent mainIntent = new Intent(SignUpActivity.this, Home.class);
+        Intent mainIntent = new Intent(SignUpActivity.this, AdminHomeActivity.class);
         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(mainIntent);
         finish();

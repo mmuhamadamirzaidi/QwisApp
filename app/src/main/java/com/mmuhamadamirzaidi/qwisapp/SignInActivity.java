@@ -162,15 +162,15 @@ public class SignInActivity extends AppCompatActivity {
 
     //Lecturer
     private void SendUserToLecturerDashboard() {
-        Intent roleIntent = new Intent(SignInActivity.this, LecturerHomeActivity.class);
-        roleIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(roleIntent);
+        Intent lecturerIntent = new Intent(SignInActivity.this, LecturerHomeActivity.class);
+        lecturerIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(lecturerIntent);
         finish();
     }
 
     //Administrator
     private void SendUserToAdminDashboard() {
-        Intent adminIntent = new Intent(SignInActivity.this, TestRoleAdminActivity.class);
+        Intent adminIntent = new Intent(SignInActivity.this, AdminHomeActivity.class);
         adminIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(adminIntent);
         finish();
