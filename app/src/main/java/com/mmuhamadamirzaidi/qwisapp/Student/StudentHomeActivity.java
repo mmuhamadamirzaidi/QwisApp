@@ -1,8 +1,6 @@
-package com.mmuhamadamirzaidi.qwisapp;
+package com.mmuhamadamirzaidi.qwisapp.Student;
 
 import android.annotation.TargetApi;
-import android.content.Intent;
-import android.database.Cursor;
 import android.os.Build;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
@@ -18,11 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
+import com.mmuhamadamirzaidi.qwisapp.R;
 
 import java.io.IOException;
 
@@ -30,9 +24,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class StudentHomeActivity extends AppCompatActivity {
 
-    TextView nameuser, walletuser, review, network, plugins, mainmenus, pagetitle, pagesubtitle;
+    TextView nameuser, walletuser, mainmenus, pagetitle, pagesubtitle;
 
-    Button btnguide;
+    Button btn_play_offline;
     Animation atg, atgtwo, atgthree;
     ImageView imageView3;
 
@@ -62,9 +56,9 @@ public class StudentHomeActivity extends AppCompatActivity {
         pagetitle = findViewById(R.id.pagetitle);
         pagesubtitle = findViewById(R.id.pagesubtitle);
 
-        btnguide = findViewById(R.id.btnguide);
+        btn_play_offline = findViewById(R.id.btn_play_offline);
 
-        btnguide.setOnClickListener(new View.OnClickListener() {
+        btn_play_offline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(StudentHomeActivity.this, "Play Offline Mode", Toast.LENGTH_SHORT).show();
@@ -77,7 +71,7 @@ public class StudentHomeActivity extends AppCompatActivity {
         pagetitle.startAnimation(atgtwo);
         pagesubtitle.startAnimation(atgtwo);
 
-        btnguide.startAnimation(atgthree);
+        btn_play_offline.startAnimation(atgthree);
 
         //Main Menus Button
         ProfileImage = (CircleImageView) findViewById(R.id.imageView2);

@@ -24,4 +24,8 @@
     <color name="textColorPrimaryDark">#2c2c2c</color>
     <color name="textColorPrimary">#4b4b4c</color>
     <color name="textColorAccent">#808080</color>
+
+    //Question
+    <color name="wrongAnswerRed">#ff0000</color>
+    <color name="correctAnswerGreen">#00ff00</color>
 </resources>

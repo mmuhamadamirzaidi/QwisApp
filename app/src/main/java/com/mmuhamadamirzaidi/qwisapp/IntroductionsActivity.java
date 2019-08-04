@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.mmuhamadamirzaidi.qwisapp.Adapters.IntroViewPagerAdapter;
 import com.mmuhamadamirzaidi.qwisapp.Model.ScreenItem;
+import com.mmuhamadamirzaidi.qwisapp.Student.StudentHomeActivity;
 
 import java.util.ArrayList;
 import java.util.List;
