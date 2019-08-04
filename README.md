@@ -2,7 +2,7 @@
 
 Qwis app enable student test their knowledge by using quiz game. It is fun, addictive, challenging.
 
-## Features (Clients)
+## Features
 
 ### Sign In/Sign Up (Authenticate User) (Done)
 
