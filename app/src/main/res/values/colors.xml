@@ -26,6 +26,6 @@
     <color name="textColorAccent">#808080</color>
 
     //Question
-    <color name="wrongAnswerRed">#ff0000</color>
-    <color name="correctAnswerGreen">#00ff00</color>
+    <color name="wrongAnswerRed">#b71c1c</color>
+    <color name="correctAnswerGreen">#007000</color>
 </resources>
