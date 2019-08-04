@@ -14,7 +14,7 @@
     <string name="correctly_answered">Correctly answered questions</string>
 
     <!--post quiz cards-->
-    <string name="swipe_left_for_answers">Swipe left to view each question, your answer and correct answer. Use system back button to exit to dashboard.</string>
+    <string name="swipe_left_for_answers">Swipe left to view each question, your answer and correct answer.\n\nUse system back button to exit to dashboard.</string>
     <string name="question">Question: </string>
     <string name="you_selected">Your Answer</string>
     <string name="correct_answer">Correct Answer</string>
