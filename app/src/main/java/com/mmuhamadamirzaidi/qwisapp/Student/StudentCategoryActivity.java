@@ -55,8 +55,6 @@ public class StudentCategoryActivity extends AppCompatActivity {
                 viewHolder.Name.setText(model.getName());
                 viewHolder.Description.setText(model.getDescription());
 
-                Picasso.get().load(model.getIconImage()).into(viewHolder.IconImage);
-
                 final String getName = model.getName();
                 final String getDescription = model.getDescription();
 
