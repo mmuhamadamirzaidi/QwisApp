@@ -14,7 +14,7 @@ import com.mmuhamadamirzaidi.qwisapp.Common.Common;
 public class PlayingGameActivity extends AppCompatActivity implements View.OnClickListener{
 
     final static long INTERVAL = 1000; //1 second
-    final static long TIMEOUT = 10000; //10 second
+    final static long TIMEOUT = 11000; //11 second, must extra 1 second
     int progressValue = 0, downtime = 10;
 
     CountDownTimer mCountDown;
@@ -131,7 +131,7 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
                 progressBar.setProgress(progressValue);
                 progressValue++;
                 downtime--;
-                countdown.setText(String.format("TIME LEFT : %d", downtime));
+                countdown.setText(String.format("%d", downtime));
             }
 
             @Override
