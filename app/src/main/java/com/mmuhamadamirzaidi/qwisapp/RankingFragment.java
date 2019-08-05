@@ -1,7 +1,6 @@
 package com.mmuhamadamirzaidi.qwisapp;
 
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -64,7 +63,7 @@ public class RankingFragment extends Fragment {
         myFragment = inflater.inflate(R.layout.fragment_ranking, container, false);
 
         //Init view
-        listRanking = (RecyclerView)myFragment.findViewById(R.id.listRanking);
+        listRanking = (RecyclerView) myFragment.findViewById(R.id.listRanking);
         layoutManager = new LinearLayoutManager(getActivity());
 //        listRanking.setHasFixedSize(true); //Need to remove if using Firebase Recycler Adapter
 
@@ -112,21 +111,20 @@ public class RankingFragment extends Fragment {
 
     private void showRanking() {
         //Print log to show
-        rankingTable.orderByChild("score")
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot data:dataSnapshot.getChildren()){
-                            Ranking local = data.getValue(Ranking.class);
-                            Log.d("DEBUG", local.getUsername());
-                        }
-                    }
+        rankingTable.orderByChild("score").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot data : dataSnapshot.getChildren()) {
+                    Ranking local = data.getValue(Ranking.class);
+                    Log.d("DEBUG", local.getUsername());
+                }
+            }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    }
-                });
+            }
+        });
     }
 
     private void updateScore(final String username, final RankingCallBack<Ranking> callback) {
