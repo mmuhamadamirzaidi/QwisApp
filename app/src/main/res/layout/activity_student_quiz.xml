@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:indeterminate="false"
-                android:progressDrawable="@drawable/circular_progress_bar"
+                android:progressDrawable="@drawable/offline_circular_progress_bar"
                 android:background="@drawable/circle_shape"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_centerHorizontal="true"
