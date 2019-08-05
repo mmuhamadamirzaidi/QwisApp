@@ -1,8 +1,5 @@
 package com.mmuhamadamirzaidi.qwisapp;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 import com.mmuhamadamirzaidi.qwisapp.Questions.IndividualQuestion;
 
 import java.util.ArrayList;

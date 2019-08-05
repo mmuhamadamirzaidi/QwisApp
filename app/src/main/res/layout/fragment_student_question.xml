@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout tools:context=".Student.StudentQuestionFragment"
+<RelativeLayout
+    tools:context=".Student.StudentQuizActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/cardview_default_elevation"

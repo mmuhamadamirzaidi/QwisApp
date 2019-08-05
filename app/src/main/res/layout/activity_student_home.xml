@@ -226,7 +226,7 @@
         android:textSize="20sp"
         android:textColor="#FFF"
         android:fontFamily="@font/mm"
-        android:text="Play"
+        android:text="Play Offline"
         android:textAllCaps="false"
         android:background="@drawable/bg_button_play_quiz"
         app:layout_constraintEnd_toEndOf="parent"

@@ -14,15 +14,16 @@ import com.mmuhamadamirzaidi.qwisapp.Common.Common;
 public class PlayingGameActivity extends AppCompatActivity implements View.OnClickListener{
 
     final static long INTERVAL = 1000; //1 second
-    final static long TIMEOUT = 11000; //11 second, must extra 1 second
-    int progressValue = 0, downtime = 10;
+    final static long TIMEOUT = 41000; //41 second, must extra 1 second
+    int progressValue = 0, downtime = 41;
 
     CountDownTimer mCountDown;
 
     int index = 0, score =0, thisQuestion = 0, totalQuestion = 0, correctAnswer;
 
+    private int maxTime = 40;
+
     ProgressBar progressBar;
-    ImageView question_image;
     Button btnA, btnB, btnC, btnD;
     TextView txtScore, txtQuestionNum, question_text, countdown;
 
@@ -36,9 +37,9 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
         txtScore = (TextView)findViewById(R.id.txtScore);
         txtQuestionNum = (TextView)findViewById(R.id.txtTotalQuestion);
         question_text = (TextView)findViewById(R.id.question_text);
-//        question_image =(ImageView)findViewById(R.id.question_image);
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
+        progressBar.setMax(maxTime);
 
         btnA = (Button)findViewById(R.id.btnAnswerA);
         btnB = (Button)findViewById(R.id.btnAnswerB);
@@ -81,7 +82,7 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
             txtQuestionNum.setText(String.format("QUESTIONS : %d / %d", thisQuestion, totalQuestion));
             progressBar.setProgress(0);
             progressValue = 0;
-            downtime = 10;
+            downtime = 41;
 
 //            if (Common.ListQuestion.get(index).getIsImageQuestion().equals("true")){
 //                //If question is image

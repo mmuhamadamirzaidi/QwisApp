@@ -1,10 +1,10 @@
 package com.mmuhamadamirzaidi.qwisapp.Student;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -14,11 +14,12 @@ import android.widget.TextView;
 import com.mmuhamadamirzaidi.qwisapp.Adapters.InstructionsViewPagerAdapter;
 import com.mmuhamadamirzaidi.qwisapp.Model.ScreenItem;
 import com.mmuhamadamirzaidi.qwisapp.R;
+import com.mmuhamadamirzaidi.qwisapp.StartGameActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentInstructionActivity extends AppCompatActivity {
+public class StudentOnlineInstructionActivity extends AppCompatActivity {
 
     private ViewPager screenPager;
     InstructionsViewPagerAdapter instructionsViewPagerAdapter ;
@@ -44,9 +45,9 @@ public class StudentInstructionActivity extends AppCompatActivity {
         // fill list screen
 
         final List<ScreenItem> mList = new ArrayList<>();
-        mList.add(new ScreenItem("Start The Quiz","Tap the Play Quiz button to start the quiz. Every question provided with 40 seconds timer.",R.drawable.instructions_start));
+        mList.add(new ScreenItem("Start The Quiz","Tap the Play Quiz button and choose category to start the quiz. Every question provided with 40 seconds timer.",R.drawable.instructions_start));
         mList.add(new ScreenItem("Choose The Answer","Tap on the desired answer choice to advance the question. If the question not answered, you will be proceed to next question after the times up!",R.drawable.instructions_choose));
-        mList.add(new ScreenItem("Score Many Points","Every correct answer rewards you with 1 point. Think wisely, choose carefully. Goodluck!",R.drawable.instructions_score));
+        mList.add(new ScreenItem("Score Many Points","Every correct answer rewards you with 10 point. Think wisely, choose carefully. Goodluck!",R.drawable.instructions_score));
         mList.add(new ScreenItem("Warning!","If you leave the app while attempting the quiz, the current quiz will be ended!",R.drawable.instructions_warning));
 
         // setup viewpager
@@ -123,11 +124,11 @@ public class StudentInstructionActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                //open main activity
+                //open start game activity
 
-                Intent dashboardActivity = new Intent(getApplicationContext(), StudentHomeActivity.class);
-                dashboardActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(dashboardActivity);
+                Intent startActivity = new Intent(getApplicationContext(), StartGameActivity.class);
+                startActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(startActivity);
                 finish();
 
 

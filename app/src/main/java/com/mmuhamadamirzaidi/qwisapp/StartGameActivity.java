@@ -11,11 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.transition.Fade;
 import android.transition.TransitionInflater;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,12 +21,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
 import com.mmuhamadamirzaidi.qwisapp.Model.Questions;
-import com.squareup.picasso.Picasso;
+import com.mmuhamadamirzaidi.qwisapp.Student.StudentOnlineInstructionActivity;
 
 import java.io.IOException;
 import java.util.Collections;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class StartGameActivity extends AppCompatActivity {
 
@@ -76,10 +71,14 @@ public class StartGameActivity extends AppCompatActivity {
             }
         });
 
+        //Instruction button
         ButtonInstructions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(StartGameActivity.this, "Read Instructions!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(StartGameActivity.this, "Read Instructions!", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(StartGameActivity.this,  StudentOnlineInstructionActivity.class);
+                startActivity(intent);
             }
         });
     }
