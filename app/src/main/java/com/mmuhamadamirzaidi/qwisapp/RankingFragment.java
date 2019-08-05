@@ -73,17 +73,17 @@ public class RankingFragment extends Fragment {
         layoutManager.setStackFromEnd(true);
         listRanking.setLayoutManager(layoutManager);
 
-        //Implement callback
-        updateScore(Common.currentUser.getUsername(), new RankingCallBack<Ranking>() {
-            @Override
-            public void callBack(Ranking ranking) {
-                //Update to ranking table
-                rankingTable.child(ranking.getUsername())
-                        .setValue(ranking);
-                //After upload, sort Ranking table and show result
-//                showRanking();
-            }
-        });
+//        //Implement callback
+//        updateScore(Common.currentUser.getUsername(), new RankingCallBack<Ranking>() {
+//            @Override
+//            public void callBack(Ranking ranking) {
+//                //Update to ranking table
+//                rankingTable.child(ranking.getUsername())
+//                        .setValue(ranking);
+//                //After upload, sort Ranking table and show result
+////                showRanking();
+//            }
+//        });
 
         //Set adapter
         adapter = new FirebaseRecyclerAdapter<Ranking, RankingViewHolder>(Ranking.class, R.layout.item_ranking, RankingViewHolder.class, rankingTable.orderByChild("score")) {

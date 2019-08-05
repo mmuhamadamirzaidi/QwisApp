@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
@@ -14,10 +15,16 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
+import com.mmuhamadamirzaidi.qwisapp.Interface.RankingCallBack;
 import com.mmuhamadamirzaidi.qwisapp.Model.QuestionScore;
+import com.mmuhamadamirzaidi.qwisapp.Model.Ranking;
 import com.mmuhamadamirzaidi.qwisapp.Student.StudentHomeActivity;
 
 import java.io.IOException;
@@ -30,7 +37,8 @@ public class DoneGameActivity extends AppCompatActivity {
     private Animation AnimationOne, AnimationTwo;
 
     private FirebaseDatabase database;
-    private DatabaseReference question_score;
+    private DatabaseReference question_score, rankingTable;
+    int sum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +59,9 @@ public class DoneGameActivity extends AppCompatActivity {
         //Firebase
         database = FirebaseDatabase.getInstance();
         question_score = database.getReference("Question_Score");
+
+
+        rankingTable = database.getReference("Ranking");
 
         if (Build.VERSION.SDK_INT>=21) {
             setupWindowAnimations();
@@ -73,6 +84,18 @@ public class DoneGameActivity extends AppCompatActivity {
                 Intent intent = new Intent(DoneGameActivity.this, StudentHomeActivity.class);
                 startActivity(intent);
                 finish();
+
+                //Implement callback
+                updateScore(Common.currentUser.getUsername(), new RankingCallBack<Ranking>() {
+                    @Override
+                    public void callBack(Ranking ranking) {
+                        //Update to ranking table
+                        rankingTable.child(ranking.getUsername())
+                                .setValue(ranking);
+                        //After upload, sort Ranking table and show result
+//                showRanking();
+                    }
+                });
             }
         });
 
@@ -122,5 +145,27 @@ public class DoneGameActivity extends AppCompatActivity {
         catch (IOException e){
         }
         return null;
+    }
+
+    private void updateScore(final String username, final RankingCallBack<Ranking> callback) {
+        question_score.orderByChild("user").equalTo(username)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot data : dataSnapshot.getChildren()) {
+                            QuestionScore ques = data.getValue(QuestionScore.class);
+                            sum += Integer.parseInt(ques.getScore());
+                        }
+                        //After sum of all score, need to process sum variable here
+                        //Firebase is async db, so if process outside, 'sum' value will be reset to 0
+                        Ranking ranking = new Ranking(username, sum);
+                        callback.callBack(ranking);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
     }
 }
