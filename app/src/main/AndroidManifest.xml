@@ -24,9 +24,9 @@
         <activity android:name=".LecturerHomeActivity" />
         <activity android:name=".ScoreDetailActivity" />
         <activity android:name=".AdminHomeActivity" />
-        <activity android:name=".DoneGameActivity" />
-        <activity android:name=".PlayingGameActivity" />
-        <activity android:name=".StartGameActivity" />
+        <activity android:name=".Student.StudentDoneGameActivity" />
+        <activity android:name=".Student.StudentPlayingGameActivity" />
+        <activity android:name=".Student.StudentStartGameActivity" />
         <activity android:name=".IntroductionsActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity" />

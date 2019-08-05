@@ -7,7 +7,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:background="#F4F4F4"
-    tools:context=".PlayingGameActivity">
+    tools:context=".Student.StudentPlayingGameActivity">
 
     <LinearLayout
         android:layout_above="@+id/quiz_footer"

@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.qwisapp;
+package com.mmuhamadamirzaidi.qwisapp.Student;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -25,11 +25,11 @@ import com.mmuhamadamirzaidi.qwisapp.Common.Common;
 import com.mmuhamadamirzaidi.qwisapp.Interface.RankingCallBack;
 import com.mmuhamadamirzaidi.qwisapp.Model.QuestionScore;
 import com.mmuhamadamirzaidi.qwisapp.Model.Ranking;
-import com.mmuhamadamirzaidi.qwisapp.Student.StudentHomeActivity;
+import com.mmuhamadamirzaidi.qwisapp.R;
 
 import java.io.IOException;
 
-public class DoneGameActivity extends AppCompatActivity {
+public class StudentDoneGameActivity extends AppCompatActivity {
 
     private TextView ResultsTitle, ResultsSubtitle, ResultsScore, ResultQuestions;
 
@@ -43,7 +43,7 @@ public class DoneGameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_done_game);
+        setContentView(R.layout.activity_student_done_game);
 
         //Text results view
         ResultsScore = findViewById(R.id.txtTotalScore);
@@ -80,8 +80,8 @@ public class DoneGameActivity extends AppCompatActivity {
         ButtonResultsTryAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(DoneGameActivity.this, "Try Again!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(DoneGameActivity.this, StudentHomeActivity.class);
+//                Toast.makeText(StudentDoneGameActivity.this, "Try Again!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(StudentDoneGameActivity.this, StudentHomeActivity.class);
                 startActivity(intent);
                 finish();
 

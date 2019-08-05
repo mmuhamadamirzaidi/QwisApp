@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.mmuhamadamirzaidi.qwisapp.Adapters.InstructionsViewPagerAdapter;
 import com.mmuhamadamirzaidi.qwisapp.Model.ScreenItem;
 import com.mmuhamadamirzaidi.qwisapp.R;
-import com.mmuhamadamirzaidi.qwisapp.StartGameActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -126,7 +125,7 @@ public class StudentOnlineInstructionActivity extends AppCompatActivity {
 
                 //open start game activity
 
-                Intent startActivity = new Intent(getApplicationContext(), StartGameActivity.class);
+                Intent startActivity = new Intent(getApplicationContext(), StudentStartGameActivity.class);
                 startActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(startActivity);
                 finish();

@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.qwisapp;
+package com.mmuhamadamirzaidi.qwisapp.Student;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,12 +6,12 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
+import com.mmuhamadamirzaidi.qwisapp.R;
 
-public class PlayingGameActivity extends AppCompatActivity implements View.OnClickListener{
+public class StudentPlayingGameActivity extends AppCompatActivity implements View.OnClickListener{
 
     final static long INTERVAL = 1000; //1 second
     final static long TIMEOUT = 41000; //41 second, must extra 1 second
@@ -30,7 +30,7 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_playing_game);
+        setContentView(R.layout.activity_student_playing_game);
 
         //Views
         countdown = (TextView)findViewById(R.id.countdown);
@@ -64,7 +64,7 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
         }
         else{
             //Choose wrong answer
-            Intent intent = new Intent(this, DoneGameActivity.class);
+            Intent intent = new Intent(this, StudentDoneGameActivity.class);
             Bundle dataSend = new Bundle();
             dataSend.putInt("SCORE", score);
             dataSend.putInt("TOTAL", totalQuestion);
@@ -109,7 +109,7 @@ public class PlayingGameActivity extends AppCompatActivity implements View.OnCli
         }
         else{
             //If it is final question
-            Intent intent = new Intent(this, DoneGameActivity.class);
+            Intent intent = new Intent(this, StudentDoneGameActivity.class);
             Bundle dataSend = new Bundle();
             dataSend.putInt("SCORE", score);
             dataSend.putInt("TOTAL", totalQuestion);

@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.qwisapp;
+package com.mmuhamadamirzaidi.qwisapp.Student;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -21,12 +21,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
 import com.mmuhamadamirzaidi.qwisapp.Model.Questions;
-import com.mmuhamadamirzaidi.qwisapp.Student.StudentOnlineInstructionActivity;
+import com.mmuhamadamirzaidi.qwisapp.R;
 
 import java.io.IOException;
 import java.util.Collections;
 
-public class StartGameActivity extends AppCompatActivity {
+public class StudentStartGameActivity extends AppCompatActivity {
 
     private TextView CategoryTitleHeader, CategorySubtitleHeader;
 
@@ -38,7 +38,7 @@ public class StartGameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_game);
+        setContentView(R.layout.activity_student_start_game);
 
         //Firebase
         database = FirebaseDatabase.getInstance();
@@ -64,8 +64,8 @@ public class StartGameActivity extends AppCompatActivity {
         ButtonCategoryPlayQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(StartGameActivity.this, "Play Game!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(StartGameActivity.this, PlayingGameActivity.class);
+//                Toast.makeText(StudentStartGameActivity.this, "Play Game!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(StudentStartGameActivity.this, StudentPlayingGameActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -75,9 +75,9 @@ public class StartGameActivity extends AppCompatActivity {
         ButtonInstructions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(StartGameActivity.this, "Read Instructions!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(StudentStartGameActivity.this, "Read Instructions!", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(StartGameActivity.this,  StudentOnlineInstructionActivity.class);
+                Intent intent = new Intent(StudentStartGameActivity.this,  StudentOnlineInstructionActivity.class);
                 startActivity(intent);
             }
         });
