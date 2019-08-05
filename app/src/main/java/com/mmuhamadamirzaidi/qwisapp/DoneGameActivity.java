@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
 import com.mmuhamadamirzaidi.qwisapp.Model.QuestionScore;
+import com.mmuhamadamirzaidi.qwisapp.Student.StudentHomeActivity;
 
 import java.io.IOException;
 
@@ -69,7 +70,7 @@ public class DoneGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(DoneGameActivity.this, "Try Again!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(DoneGameActivity.this, AdminHomeActivity.class);
+                Intent intent = new Intent(DoneGameActivity.this, StudentHomeActivity.class);
                 startActivity(intent);
                 finish();
             }
