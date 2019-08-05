@@ -29,8 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:text="Muhamad Amir Bin Zaidi"
-        android:id="@+id/nameuser"
+        android:id="@+id/studentemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -42,8 +41,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:text="Student Account"
-        android:id="@+id/walletuser"
+        android:id="@+id/studentusername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -51,7 +49,7 @@
         android:textColor="#FFF"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/nameuser" />
+        app:layout_constraintTop_toBottomOf="@+id/studentemail" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"

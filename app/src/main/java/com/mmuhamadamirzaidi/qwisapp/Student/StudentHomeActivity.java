@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mmuhamadamirzaidi.qwisapp.Common.Common;
 import com.mmuhamadamirzaidi.qwisapp.Data.QuizDBContract;
 import com.mmuhamadamirzaidi.qwisapp.R;
 
@@ -27,7 +28,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class StudentHomeActivity extends AppCompatActivity {
 
-    TextView nameuser, walletuser, mainmenus, pagetitle, pagesubtitle;
+    TextView studentemail, studentusername, mainmenus, pagetitle, pagesubtitle;
 
     Button btn_play_offline;
     Animation atg, atgtwo, atgthree;
@@ -48,8 +49,11 @@ public class StudentHomeActivity extends AppCompatActivity {
         atgtwo = AnimationUtils.loadAnimation(this, R.anim.animation_dashboard_two);
         atgthree = AnimationUtils.loadAnimation(this, R.anim.animation_dashboard_three);
 
-        nameuser = findViewById(R.id.nameuser);
-        walletuser = findViewById(R.id.walletuser);
+        studentemail = findViewById(R.id.studentemail);
+        studentusername = findViewById(R.id.studentusername);
+
+        studentemail.setText(Common.currentUser.getEmail());
+        studentusername.setText(Common.currentUser.getUsername());
 
         imageView3 = findViewById(R.id.imageView3);
 
