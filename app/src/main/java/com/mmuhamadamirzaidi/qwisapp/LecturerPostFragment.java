@@ -32,7 +32,6 @@ public class LecturerPostFragment extends Fragment {
     RecyclerView listPost;
     FirebaseDatabase database;
     DatabaseReference reference;
-//    RecyclerView ourdoes;
     ArrayList<Post> list;
     PostAdapter postAdapter;
 
@@ -50,7 +49,7 @@ public class LecturerPostFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         database = FirebaseDatabase.getInstance();
-        reference = FirebaseDatabase.getInstance().getReference().child("Post");
+        reference = database.getReference().child("Post");
 
     }
 
@@ -76,6 +75,7 @@ public class LecturerPostFragment extends Fragment {
         listPost = (RecyclerView) myFragment.findViewById(R.id.listPost);
         listPost.setLayoutManager(new LinearLayoutManager(getContext()));
         list = new ArrayList<Post>();
+
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override

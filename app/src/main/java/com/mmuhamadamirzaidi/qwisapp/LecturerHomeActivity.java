@@ -41,6 +41,10 @@ public class LecturerHomeActivity extends AppCompatActivity {
                         selectedFragment = LecturerStudentFragment.newInstance();
                         break;
 
+                    case R.id.action_post:
+                        selectedFragment = LecturerPostFragment.newInstance();
+                        break;
+
                     case R.id.action_profile:
                         selectedFragment = ProfileFragment.newInstance();
                         break;

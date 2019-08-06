@@ -24,6 +24,13 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/action_post"
+        android:title="Posts"
+        android:enabled="true"
+        android:icon="@drawable/ic_book_white_24dp"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/action_profile"
         android:title="Profile"
         android:enabled="true"

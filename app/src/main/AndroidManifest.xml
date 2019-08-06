@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LecturerCreatePostActivity"></activity>
+        <activity android:name=".LecturerUpdatePostActivity"></activity>
+        <activity android:name=".LecturerCreatePostActivity" />
         <activity android:name=".LecturerCreateStudentActivity" />
         <activity android:name=".Admin.AdminCreateStudentActivity" />
         <activity android:name=".Admin.AdminCreateLecturerActivity" />

@@ -3,15 +3,15 @@ package com.mmuhamadamirzaidi.qwisapp.Model;
 public class Post {
 
     String titlepost;
-    String descdpost;
+    String descpost;
     String keypost;
 
     public Post() {
     }
 
-    public Post(String titlepost, String descdpost, String keypost) {
+    public Post(String titlepost, String descpost, String keypost) {
         this.titlepost = titlepost;
-        this.descdpost = descdpost;
+        this.descpost = descpost;
         this.keypost = keypost;
     }
 
@@ -23,12 +23,12 @@ public class Post {
         this.titlepost = titlepost;
     }
 
-    public String getDescdpost() {
-        return descdpost;
+    public String getDescpost() {
+        return descpost;
     }
 
-    public void setDescdpost(String descdpost) {
-        this.descdpost = descdpost;
+    public void setDescpost(String descpost) {
+        this.descpost = descpost;
     }
 
     public String getKeypost() {

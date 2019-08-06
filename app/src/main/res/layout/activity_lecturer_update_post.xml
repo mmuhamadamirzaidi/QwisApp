@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F4"
+    android:orientation="vertical"
+    tools:context=".LecturerUpdatePostActivity">
+
+    <RelativeLayout
+        android:id="@+id/rellay1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="203dp"
+        android:background="@color/colorPrimaryDark">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="22dp">
+
+            <TextView
+                android:id="@+id/titlepage"
+                android:layout_marginTop="20dp"
+                android:textSize="32sp"
+                android:textColor="#FFF"
+                android:text="Update The Post"
+                android:gravity="center"
+                android:fontFamily="@font/mm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/subtitlepage"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textColor="#FFF"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/ml"
+                android:text="Update Post Details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    //Content
+
+    <LinearLayout
+        android:id="@+id/rellay3"
+        android:layout_below="@id/rellay1"
+        android:gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="-60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card"
+        android:orientation="vertical"
+        android:paddingBottom="22dp"
+        android:paddingTop="22dp">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/addtitled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mm"
+                android:gravity="center"
+                android:text="Post Title"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/titlepost"
+                android:textSize="18sp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:fontFamily="@font/ml"
+                android:gravity="center"
+                android:background="@drawable/bginputtask"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Post Title"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/addtitle"
+                android:textSize="22sp"
+                android:fontFamily="@font/mm"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/descpost"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="18sp"
+                android:maxLength="100"
+                android:fontFamily="@font/ml"
+                android:gravity="center"
+                android:background="@drawable/bginputtask"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Description" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/rellay3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+        <Button
+            android:id="@+id/btnSaveUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/bgbtncreate"
+            android:fontFamily="@font/mm"
+            android:text="Update Post"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:text="Delete"
+            android:fontFamily="@font/mm"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAllCaps="false"
+            android:background="@drawable/bgbtncancel"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

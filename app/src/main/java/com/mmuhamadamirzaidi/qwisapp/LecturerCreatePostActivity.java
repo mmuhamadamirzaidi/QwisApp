@@ -2,6 +2,7 @@ package com.mmuhamadamirzaidi.qwisapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,8 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -43,7 +42,7 @@ public class LecturerCreatePostActivity extends AppCompatActivity {
 
         btnSaveTask = findViewById(R.id.btnSaveTask);
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Memo").child("Memo" + postNum);
+        reference = FirebaseDatabase.getInstance().getReference().child("Post").child("Post" + postNum);
 
         btnSaveTask.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,11 +60,11 @@ public class LecturerCreatePostActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(titlePost))
         {
-            Toast.makeText(this, "Please fill in your memo title!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please fill in post title!", Toast.LENGTH_SHORT).show();
         }
         if (TextUtils.isEmpty(descPost))
         {
-            Toast.makeText(this, "Please fill in your memo description!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please fill in post description!", Toast.LENGTH_SHORT).show();
         }
         else{
             loadingBar.setTitle("Saving Post");
