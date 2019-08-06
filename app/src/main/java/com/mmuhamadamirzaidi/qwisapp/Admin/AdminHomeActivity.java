@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.qwisapp;
+package com.mmuhamadamirzaidi.qwisapp.Admin;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -7,6 +7,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import com.mmuhamadamirzaidi.qwisapp.CategoryFragment;
+import com.mmuhamadamirzaidi.qwisapp.ProfileFragment;
+import com.mmuhamadamirzaidi.qwisapp.R;
+import com.mmuhamadamirzaidi.qwisapp.RankingFragment;
 
 public class AdminHomeActivity extends AppCompatActivity {
 
@@ -53,11 +58,11 @@ public class AdminHomeActivity extends AppCompatActivity {
                         break;
 
                     case R.id.action_student:
-                        selectedFragment = StudentFragment.newInstance();
+                        selectedFragment = AdminStudentFragment.newInstance();
                         break;
 
                     case R.id.action_lecturer:
-                        selectedFragment = LecturerFragment.newInstance();
+                        selectedFragment = AdminLecturerFragment.newInstance();
                         break;
 
                     case R.id.action_profile:

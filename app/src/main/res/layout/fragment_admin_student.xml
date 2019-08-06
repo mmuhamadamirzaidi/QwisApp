@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    tools:context=".StudentFragment">
+    tools:context=".Admin.AdminStudentFragment">
 
     <LinearLayout
         android:id="@+id/haloo"
@@ -87,6 +87,25 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_collapseMode="pin">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/lecturer_fab_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="16dp"
+            android:elevation="6dp"
+            app:pressedTranslationZ="12dp"
+            android:src="@drawable/ic_add_white_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </android.support.design.widget.CoordinatorLayout>
 
 
 </android.support.constraint.ConstraintLayout>

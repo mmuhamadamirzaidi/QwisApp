@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.mmuhamadamirzaidi.qwisapp.Adapters.IntroViewPagerAdapter;
+import com.mmuhamadamirzaidi.qwisapp.Admin.AdminHomeActivity;
 import com.mmuhamadamirzaidi.qwisapp.Model.ScreenItem;
 import com.mmuhamadamirzaidi.qwisapp.Student.StudentHomeActivity;
 

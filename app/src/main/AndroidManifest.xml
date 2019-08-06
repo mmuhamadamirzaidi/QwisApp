@@ -14,6 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LecturerCreateStudentActivity"></activity>
+        <activity android:name=".Admin.AdminCreateStudentActivity" />
+        <activity android:name=".Admin.AdminCreateLecturerActivity" />
         <activity android:name=".Student.StudentCategoryActivity" />
         <activity android:name=".Student.StudentInstructionActivity" />
         <activity android:name=".Student.StudentOnlineInstructionActivity" />
@@ -23,7 +26,7 @@
         <activity android:name=".Student.StudentHomeActivity" />
         <activity android:name=".LecturerHomeActivity" />
         <activity android:name=".ScoreDetailActivity" />
-        <activity android:name=".AdminHomeActivity" />
+        <activity android:name=".Admin.AdminHomeActivity" />
         <activity android:name=".Student.StudentDoneGameActivity" />
         <activity android:name=".Student.StudentPlayingGameActivity" />
         <activity android:name=".Student.StudentStartGameActivity" />

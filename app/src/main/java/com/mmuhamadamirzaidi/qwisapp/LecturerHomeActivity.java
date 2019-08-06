@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.mmuhamadamirzaidi.qwisapp.Admin.AdminStudentFragment;
+
 public class LecturerHomeActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
@@ -36,7 +38,7 @@ public class LecturerHomeActivity extends AppCompatActivity {
                         break;
 
                     case R.id.action_student:
-                        selectedFragment = StudentFragment.newInstance();
+                        selectedFragment = LecturerStudentFragment.newInstance();
                         break;
 
                     case R.id.action_profile:

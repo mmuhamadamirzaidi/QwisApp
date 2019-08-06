@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DataSnapshot;
@@ -88,6 +89,9 @@ public class RankingFragment extends Fragment {
         adapter = new FirebaseRecyclerAdapter<Ranking, RankingViewHolder>(Ranking.class, R.layout.item_ranking, RankingViewHolder.class, rankingTable.orderByChild("score")) {
             @Override
             protected void populateViewHolder(RankingViewHolder viewHolder, final Ranking model, int position) {
+
+                viewHolder.IconImage.setAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_transition_animation));
+                viewHolder.Container.setAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_scale_animation));
 
                 viewHolder.txt_name.setText(model.getUsername());
                 viewHolder.txt_score.setText(String.valueOf(model.getScore()));

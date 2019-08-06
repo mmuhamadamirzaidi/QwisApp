@@ -1,9 +1,11 @@
 package com.mmuhamadamirzaidi.qwisapp;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.animation.AnimationUtils;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -48,6 +50,10 @@ public class ScoreDetailActivity extends AppCompatActivity {
         adapter = new FirebaseRecyclerAdapter<QuestionScore, ScoreDetailViewHolder>(QuestionScore.class, R.layout.item_score, ScoreDetailViewHolder.class, question_score.orderByChild("user").equalTo(viewUser)) {
             @Override
             protected void populateViewHolder(ScoreDetailViewHolder viewHolder, QuestionScore model, int position) {
+
+                viewHolder.IconImage.setAnimation(AnimationUtils.loadAnimation(getBaseContext(), R.anim.fade_transition_animation));
+                viewHolder.Container.setAnimation(AnimationUtils.loadAnimation(getBaseContext(), R.anim.fade_scale_animation));
+
                 viewHolder.txt_name.setText(model.getCategoryName());
                 viewHolder.txt_score.setText(model.getScore());
             }

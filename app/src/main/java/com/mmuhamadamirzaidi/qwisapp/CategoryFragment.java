@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -68,6 +69,9 @@ public class CategoryFragment extends Fragment {
         adapter = new FirebaseRecyclerAdapter<Category, CategoryViewHolder>(Category.class, R.layout.item_category, CategoryViewHolder.class, categories) {
             @Override
             protected void populateViewHolder(CategoryViewHolder viewHolder, final Category model, int position) {
+
+                viewHolder.IconImage.setAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_transition_animation));
+                viewHolder.Container.setAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_scale_animation));
 
                 viewHolder.Name.setText(model.getName());
                 viewHolder.Description.setText(model.getDescription());
