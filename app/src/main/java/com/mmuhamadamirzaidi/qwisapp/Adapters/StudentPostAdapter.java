@@ -13,18 +13,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mmuhamadamirzaidi.qwisapp.LecturerUpdatePostActivity;
 import com.mmuhamadamirzaidi.qwisapp.Model.Post;
 import com.mmuhamadamirzaidi.qwisapp.R;
 
 import java.util.ArrayList;
 
-public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> {
+public class StudentPostAdapter extends RecyclerView.Adapter<StudentPostAdapter.MyViewHolder> {
 
     Context context;
     ArrayList<Post> myPost;
 
-    public PostAdapter(Context c, ArrayList<Post> p) {
+    public StudentPostAdapter(Context c, ArrayList<Post> p) {
         context = c;
         myPost = p;
     }
@@ -32,14 +31,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_post,viewGroup, false));
+    public StudentPostAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        return new StudentPostAdapter.MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_student_post,viewGroup, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final MyViewHolder myViewHolder, int i) {
+    public void onBindViewHolder(@NonNull final StudentPostAdapter.MyViewHolder myViewHolder, int i) {
 
-        myViewHolder.categoryIconImage.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_transition_animation));
         myViewHolder.container.setAnimation(AnimationUtils.loadAnimation(context,R.anim.fade_scale_animation));
 
         myViewHolder.titlepost.setText(myPost.get(i).getTitlepost());
@@ -53,13 +51,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
             @Override
             public void onClick(View v) {
 
-//                Toast.makeText(context, ""+getTitlePost, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, ""+getTitlePost, Toast.LENGTH_SHORT).show();
 
-                Intent editPost = new Intent(context, LecturerUpdatePostActivity.class);
-                editPost.putExtra("titlepost", getTitlePost);
-                editPost.putExtra("descpost", getDescPost);
-                editPost.putExtra("keypost", getKeyPost);
-                context.startActivity(editPost);
+//                Intent editPost = new Intent(context, LecturerUpdatePostActivity.class);
+//                editPost.putExtra("titlepost", getTitlePost);
+//                editPost.putExtra("descpost", getDescPost);
+//                editPost.putExtra("keypost", getKeyPost);
+//                context.startActivity(editPost);
             }
         });
     }
@@ -72,7 +70,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView titlepost, descpost, keypost;
-        ImageView categoryIconImage;
         RelativeLayout container;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -81,7 +78,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
             descpost = (TextView) itemView.findViewById(R.id.descpost);
 
             container = itemView.findViewById(R.id.container);
-            categoryIconImage = itemView.findViewById(R.id.categoryIconImage);
         }
     }
+
 }

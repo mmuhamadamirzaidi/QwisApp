@@ -34,7 +34,7 @@ public class StudentHomeActivity extends AppCompatActivity {
     Animation atg, atgtwo, atgthree;
     ImageView imageView3;
 
-    private CircleImageView ProfileImage, Online, Instructions, Statistics;
+    private CircleImageView ProfileImage, Online, Instructions, Statistics, Post;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +89,7 @@ public class StudentHomeActivity extends AppCompatActivity {
 
         Online = (CircleImageView) findViewById(R.id.online);
         Instructions = (CircleImageView) findViewById(R.id.instructions);
+        Post = (CircleImageView) findViewById(R.id.post);
         Statistics = (CircleImageView) findViewById(R.id.statistics);
 
         ProfileImage.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +137,16 @@ public class StudentHomeActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 cursor.close();
+            }
+        });
+
+        Post.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Toast.makeText(StudentHomeActivity.this, "Post", Toast.LENGTH_SHORT).show();
+
+                Intent onlineIntent = new Intent(StudentHomeActivity.this, StudentPostActivity.class);
+                startActivity(onlineIntent);
             }
         });
     }
