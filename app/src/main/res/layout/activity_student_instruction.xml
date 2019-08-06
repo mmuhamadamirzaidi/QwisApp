@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Student.StudentInstructionActivity"
-    android:background="#F4F4F4"
+    android:background="@color/backgroundColor"
     android:orientation="vertical" >
 
     <android.support.v4.view.ViewPager

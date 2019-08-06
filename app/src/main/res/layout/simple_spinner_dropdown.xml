@@ -9,7 +9,3 @@
                  android:paddingRight="10dp"
                  android:paddingTop="5dp"
                  android:maxLines="1" />
-
-
-
-    <!--android:ellipsize="marquee"-->

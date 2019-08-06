@@ -7,6 +7,9 @@
     <color name="color_transparent">#00000000</color>
     <color name="text_color">#6e6e6e</color>
 
+    //Background
+    <color name="backgroundColor">#f4f4f4</color>
+
     <!-- colors for tab and screen text -->
     <color name="tab_indicator_gray">#c0c0c0</color>
     <color name="intro_title_color">#000000</color>
@@ -17,8 +20,6 @@
 
     <color name="light_gray">#EDE7F6</color>
     <color name="lightish_gray">#dfd4ef</color>
-
-    <color name="backgroundColor">#F4F4F4</color>
 
     //Text
     <color name="textColorPrimaryDark">#2c2c2c</color>

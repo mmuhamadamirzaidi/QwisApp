@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:background="#F4F4F4"
+    android:background="@color/backgroundColor"
     tools:context=".Student.StudentPlayingGameActivity">
 
     <LinearLayout

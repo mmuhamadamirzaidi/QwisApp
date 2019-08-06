@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="16dp"
+    android:background="@color/backgroundColor"
     android:paddingRight="16dp"
     tools:context=".Admin.AdminStudentFragment">
 
