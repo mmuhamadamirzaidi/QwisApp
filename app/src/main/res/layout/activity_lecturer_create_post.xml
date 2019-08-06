@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     android:orientation="vertical"
-    tools:context=".LecturerCreatePostActivity">
+    tools:context=".Lecturer.LecturerCreatePostActivity">
 
     <RelativeLayout
         android:id="@+id/rellay1"

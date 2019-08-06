@@ -11,9 +11,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.mmuhamadamirzaidi.qwisapp.LecturerUpdatePostActivity;
+import com.mmuhamadamirzaidi.qwisapp.Lecturer.LecturerUpdatePostActivity;
 import com.mmuhamadamirzaidi.qwisapp.Model.Post;
 import com.mmuhamadamirzaidi.qwisapp.R;
 

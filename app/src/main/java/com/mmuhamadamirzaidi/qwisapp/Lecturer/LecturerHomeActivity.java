@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.qwisapp;
+package com.mmuhamadamirzaidi.qwisapp.Lecturer;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,7 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.mmuhamadamirzaidi.qwisapp.Admin.AdminStudentFragment;
+import com.mmuhamadamirzaidi.qwisapp.CategoryFragment;
+import com.mmuhamadamirzaidi.qwisapp.ProfileFragment;
+import com.mmuhamadamirzaidi.qwisapp.R;
+import com.mmuhamadamirzaidi.qwisapp.RankingFragment;
 
 public class LecturerHomeActivity extends AppCompatActivity {
 

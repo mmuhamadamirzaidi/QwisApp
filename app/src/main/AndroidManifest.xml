@@ -15,9 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Student.StudentPostActivity"></activity>
-        <activity android:name=".LecturerUpdatePostActivity" />
-        <activity android:name=".LecturerCreatePostActivity" />
-        <activity android:name=".LecturerCreateStudentActivity" />
+        <activity android:name=".Lecturer.LecturerUpdatePostActivity" />
+        <activity android:name=".Lecturer.LecturerCreatePostActivity" />
+        <activity android:name=".Lecturer.LecturerCreateStudentActivity" />
         <activity android:name=".Admin.AdminCreateStudentActivity" />
         <activity android:name=".Admin.AdminCreateLecturerActivity" />
         <activity android:name=".Student.StudentCategoryActivity" />
@@ -27,7 +27,7 @@
         <activity android:name=".Student.StudentPostQuizActivity" />
         <activity android:name=".Student.StudentQuizActivity" />
         <activity android:name=".Student.StudentHomeActivity" />
-        <activity android:name=".LecturerHomeActivity" />
+        <activity android:name=".Lecturer.LecturerHomeActivity" />
         <activity android:name=".ScoreDetailActivity" />
         <activity android:name=".Admin.AdminHomeActivity" />
         <activity android:name=".Student.StudentDoneGameActivity" />

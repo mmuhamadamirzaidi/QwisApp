@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     android:orientation="vertical"
-    tools:context=".LecturerUpdatePostActivity">
+    tools:context=".Lecturer.LecturerUpdatePostActivity">
 
     <RelativeLayout
         android:id="@+id/rellay1"

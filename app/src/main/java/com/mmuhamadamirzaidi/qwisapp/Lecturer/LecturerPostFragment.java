@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.qwisapp;
+package com.mmuhamadamirzaidi.qwisapp.Lecturer;
 
 
 import android.content.Intent;
@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mmuhamadamirzaidi.qwisapp.Adapters.PostAdapter;
 import com.mmuhamadamirzaidi.qwisapp.Model.Post;
+import com.mmuhamadamirzaidi.qwisapp.R;
 
 import java.util.ArrayList;
 

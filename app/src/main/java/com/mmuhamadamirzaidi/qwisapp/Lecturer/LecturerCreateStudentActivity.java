@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.qwisapp;
+package com.mmuhamadamirzaidi.qwisapp.Lecturer;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -16,9 +16,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.mmuhamadamirzaidi.qwisapp.Admin.AdminCreateStudentActivity;
-import com.mmuhamadamirzaidi.qwisapp.Admin.AdminHomeActivity;
 import com.mmuhamadamirzaidi.qwisapp.Model.User;
+import com.mmuhamadamirzaidi.qwisapp.R;
 
 public class LecturerCreateStudentActivity extends AppCompatActivity {
 

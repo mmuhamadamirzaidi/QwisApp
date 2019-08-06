@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mmuhamadamirzaidi.qwisapp.Admin.AdminHomeActivity;
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
+import com.mmuhamadamirzaidi.qwisapp.Lecturer.LecturerHomeActivity;
 import com.mmuhamadamirzaidi.qwisapp.Model.User;
 
 public class SignInActivity extends AppCompatActivity {

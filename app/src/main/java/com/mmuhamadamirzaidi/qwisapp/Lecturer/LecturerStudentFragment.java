@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.qwisapp;
+package com.mmuhamadamirzaidi.qwisapp.Lecturer;
 
 
 import android.content.Intent;
@@ -18,10 +18,9 @@ import android.widget.Toast;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.mmuhamadamirzaidi.qwisapp.Admin.AdminCreateStudentActivity;
-import com.mmuhamadamirzaidi.qwisapp.Admin.AdminStudentFragment;
 import com.mmuhamadamirzaidi.qwisapp.Interface.ItemClickListener;
 import com.mmuhamadamirzaidi.qwisapp.Model.User;
+import com.mmuhamadamirzaidi.qwisapp.R;
 import com.mmuhamadamirzaidi.qwisapp.ViewHolder.StudentViewHolder;
 
 public class LecturerStudentFragment extends Fragment {
