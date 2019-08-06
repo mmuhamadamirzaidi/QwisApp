@@ -147,6 +147,7 @@ public class LecturerCreateStudentActivity extends AppCompatActivity {
     private void SendToLecturerHomeFragment() {
 
         Intent intent = new Intent(LecturerCreateStudentActivity.this, LecturerHomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
     }

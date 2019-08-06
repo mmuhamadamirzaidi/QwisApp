@@ -146,6 +146,7 @@ public class AdminCreateStudentActivity extends AppCompatActivity {
     private void SendToAdminHomeFragment() {
 
         Intent intent = new Intent(AdminCreateStudentActivity.this, AdminHomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
     }

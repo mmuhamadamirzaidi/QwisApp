@@ -146,6 +146,7 @@ public class AdminCreateLecturerActivity extends AppCompatActivity {
     private void SendAdminToListLecturerFragment() {
 
         Intent intent = new Intent(AdminCreateLecturerActivity.this, AdminHomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
     }

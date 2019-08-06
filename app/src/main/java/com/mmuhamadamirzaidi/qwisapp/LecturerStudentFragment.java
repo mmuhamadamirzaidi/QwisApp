@@ -55,7 +55,7 @@ public class LecturerStudentFragment extends Fragment {
         myFragment = inflater.inflate(R.layout.fragment_lecturer_student, container, false);
 
         //Floating Action Button
-        LecturerFabCreate = (FloatingActionButton)  myFragment.findViewById(R.id.lecturer_fab_create);
+        LecturerFabCreate = (FloatingActionButton) myFragment.findViewById(R.id.lecturer_fab_create);
 
         LecturerFabCreate.setOnClickListener(new View.OnClickListener() {
             @Override
