@@ -15,5 +15,3 @@ Qwis app enable student test their knowledge by using quiz game. It is fun, addi
 ### Offline Quiz (Done)
 
 ### Offline Statistics (Done)
-
-## Memo (Ongoing)
