@@ -14,32 +14,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Student.StudentPostActivity"></activity>
-        <activity android:name=".Lecturer.LecturerUpdatePostActivity" />
-        <activity android:name=".Lecturer.LecturerCreatePostActivity" />
-        <activity android:name=".Lecturer.LecturerCreateStudentActivity" />
-        <activity android:name=".Admin.AdminCreateStudentActivity" />
-        <activity android:name=".Admin.AdminCreateLecturerActivity" />
-        <activity android:name=".Student.StudentCategoryActivity" />
-        <activity android:name=".Student.StudentInstructionActivity" />
-        <activity android:name=".Student.StudentOnlineInstructionActivity" />
-        <activity android:name=".Student.StudentStatisticsActivity" />
-        <activity android:name=".Student.StudentPostQuizActivity" />
-        <activity android:name=".Student.StudentQuizActivity" />
-        <activity android:name=".Student.StudentHomeActivity" />
-        <activity android:name=".Lecturer.LecturerHomeActivity" />
-        <activity android:name=".ScoreDetailActivity" />
-        <activity android:name=".Admin.AdminHomeActivity" />
-        <activity android:name=".Student.StudentDoneGameActivity" />
-        <activity android:name=".Student.StudentPlayingGameActivity" />
-        <activity android:name=".Student.StudentStartGameActivity" />
-        <activity android:name=".IntroductionsActivity" />
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".SignUpActivity" />
+        <activity android:name=".Student.StudentPostActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Lecturer.LecturerUpdatePostActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Lecturer.LecturerCreatePostActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Lecturer.LecturerCreateStudentActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Admin.AdminCreateStudentActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Admin.AdminCreateLecturerActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Student.StudentCategoryActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Student.StudentInstructionActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Student.StudentOnlineInstructionActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Student.StudentStatisticsActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Student.StudentPostQuizActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Student.StudentQuizActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Student.StudentHomeActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Lecturer.LecturerHomeActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".ScoreDetailActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Admin.AdminHomeActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Student.StudentDoneGameActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Student.StudentPlayingGameActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".Student.StudentStartGameActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".IntroductionsActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".SignInActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
+        <activity android:name=".SignUpActivity" android:configChanges="orientation" android:screenOrientation="portrait"/>
         <activity
             android:name=".SplashActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait">
+            android:configChanges="orientation" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
