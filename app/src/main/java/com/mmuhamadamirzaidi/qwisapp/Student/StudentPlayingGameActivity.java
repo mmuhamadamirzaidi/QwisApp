@@ -20,7 +20,7 @@ public class StudentPlayingGameActivity extends AppCompatActivity implements Vie
 
     CountDownTimer mCountDown;
 
-    int index = 0, score = 0, thisQuestion = 0, totalQuestion, correctAnswer;
+    int index = 0, score = 0, thisQuestion = 0, totalQuestion = 0, correctAnswer;
 
     private int maxTime = 40;
 
@@ -58,23 +58,22 @@ public class StudentPlayingGameActivity extends AppCompatActivity implements Vie
 
         mCountDown.cancel();
         if (index < totalQuestion) { //Still have questions in list
-
             Button clickedButton = (Button) view;
-            if (clickedButton.getText().equals(Common.ListQuestion.get(index).getCorrectAnswer()))
+            if (clickedButton.getText().equals(Common.listQuestions.get(index).getCorrectAnswer()))
                 //Choose correct answer
-                score += 1.5;
-            correctAnswer++;
-            showQuestions(++index); //Next questions
+                score += 1;
+                correctAnswer++;
+                showQuestions(++index); //Next questions
         } else {
-            //Choose wrong answer
-            Intent intent = new Intent(this, StudentDoneGameActivity.class);
-            Bundle dataSend = new Bundle();
-            dataSend.putInt("SCORE", score);
-            dataSend.putInt("TOTAL", totalQuestion);
-            dataSend.putInt("CORRECT", correctAnswer);
-            intent.putExtras(dataSend);
-            startActivity(intent);
-            finish();
+                //Choose wrong answer
+                Intent intent = new Intent(this, StudentDoneGameActivity.class);
+                Bundle dataSend = new Bundle();
+                dataSend.putInt("SCORE", score);
+                dataSend.putInt("TOTAL", totalQuestion);
+                dataSend.putInt("CORRECT", correctAnswer);
+                intent.putExtras(dataSend);
+                startActivity(intent);
+                finish();
         }
         txtScore.setText(String.format("CURRENT SCORE: %d", score));
     }
@@ -87,14 +86,13 @@ public class StudentPlayingGameActivity extends AppCompatActivity implements Vie
             progressValue = 0;
             downtime = 41;
 
-            if (Common.ListQuestion.get(index).getIsImageQuestion().equals("false"))
-            {
-                question_text.setText(Common.ListQuestion.get(index).getQuestion());
+            if (Common.listQuestions.get(index).getIsImageQuestion().equals("false")) {
+                question_text.setText(Common.listQuestions.get(index).getQuestion());
             }
-            btnA.setText(Common.ListQuestion.get(index).getAnswerA());
-            btnB.setText(Common.ListQuestion.get(index).getAnswerB());
-            btnC.setText(Common.ListQuestion.get(index).getAnswerC());
-            btnD.setText(Common.ListQuestion.get(index).getAnswerD());
+            btnA.setText(Common.listQuestions.get(index).getAnswerA());
+            btnB.setText(Common.listQuestions.get(index).getAnswerB());
+            btnC.setText(Common.listQuestions.get(index).getAnswerC());
+            btnD.setText(Common.listQuestions.get(index).getAnswerD());
 
             mCountDown.start(); //Start timer countdown
 
@@ -115,7 +113,7 @@ public class StudentPlayingGameActivity extends AppCompatActivity implements Vie
     protected void onPostResume() {
         super.onPostResume();
 
-        totalQuestion = Common.ListQuestion.size();
+        totalQuestion = Common.listQuestions.size();
 
         mCountDown = new CountDownTimer(TIMEOUT, INTERVAL) {
             @Override

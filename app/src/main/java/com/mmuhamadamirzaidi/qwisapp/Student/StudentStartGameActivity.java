@@ -20,7 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
-import com.mmuhamadamirzaidi.qwisapp.Model.Question;
+import com.mmuhamadamirzaidi.qwisapp.Model.Questions;
 import com.mmuhamadamirzaidi.qwisapp.R;
 
 import java.io.IOException;
@@ -42,7 +42,7 @@ public class StudentStartGameActivity extends AppCompatActivity {
 
         //Firebase
         database = FirebaseDatabase.getInstance();
-        questions = database.getReference("Question");
+        questions = database.getReference("Questions");
 
         CategoryTitleHeader = findViewById(R.id.categorytitleheader);
         CategorySubtitleHeader = findViewById(R.id.categorysubtitleheader);
@@ -86,15 +86,15 @@ public class StudentStartGameActivity extends AppCompatActivity {
     private void loadQuestions(String categoryId) {
 
         //Clear list if there're previous questions
-        if (Common.ListQuestion.size() > 0)
-            Common.ListQuestion.clear();
+        if (Common.listQuestions.size() > 0)
+            Common.listQuestions.clear();
 
         questions.orderByChild("CategoryId").equalTo(categoryId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    Question ques = dataSnapshot1.getValue(Question.class);
-                    Common.ListQuestion.add(ques);
+                    Questions ques = dataSnapshot1.getValue(Questions.class);
+                    Common.listQuestions.add(ques);
                 }
             }
 
@@ -103,7 +103,7 @@ public class StudentStartGameActivity extends AppCompatActivity {
 
             }
         });
-        Collections.shuffle(Common.ListQuestion); //Shuffle questions to get random list questions
+        Collections.shuffle(Common.listQuestions); //Shuffle questions to get random list questions
     }
 
     @TargetApi(21)

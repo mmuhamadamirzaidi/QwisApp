@@ -46,7 +46,7 @@ public class StudentInstructionActivity extends AppCompatActivity {
         final List<ScreenItem> mList = new ArrayList<>();
         mList.add(new ScreenItem("Start The Quiz","Tap the Play Quiz button to start the quiz. Every question provided with 40 seconds timer.",R.drawable.instructions_start));
         mList.add(new ScreenItem("Choose The Answer","Tap on the desired answer choice to advance the question. If the question not answered, you will be proceed to next question after the times up!",R.drawable.instructions_choose));
-        mList.add(new ScreenItem("Score Many Points","Every correct answer rewards you with 1 point. Think wisely, choose carefully. Goodluck!",R.drawable.instructions_score));
+        mList.add(new ScreenItem("Score Many Points","Every correct answer rewards you with 1 mark. Think wisely, choose carefully. Goodluck!",R.drawable.instructions_score));
         mList.add(new ScreenItem("Warning!","If you leave the app while attempting the quiz, the current quiz will be ended!",R.drawable.instructions_warning));
 
         // setup viewpager
