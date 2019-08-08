@@ -63,6 +63,7 @@
         style="@style/QuizPageFooter">
 
         <TextView
+            android:text="3"
             android:fontFamily="@font/mm"
             android:id="@+id/questionNumber_textview"
             android:layout_width="wrap_content"
