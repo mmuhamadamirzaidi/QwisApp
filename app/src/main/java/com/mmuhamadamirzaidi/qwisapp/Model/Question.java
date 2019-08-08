@@ -1,13 +1,13 @@
 package com.mmuhamadamirzaidi.qwisapp.Model;
 
-public class Questions {
+public class Question {
 
     private String Question, AnswerA, AnswerB, AnswerC, AnswerD, CorrectAnswer, CategoryId, IsImageQuestion;
 
-    public Questions() {
+    public Question() {
     }
 
-    public Questions(String question, String answerA, String answerB, String answerC, String answerD, String correctAnswer, String categoryId, String isImageQuestion) {
+    public Question(String question, String answerA, String answerB, String answerC, String answerD, String correctAnswer, String categoryId, String isImageQuestion) {
         Question = question;
         AnswerA = answerA;
         AnswerB = answerB;

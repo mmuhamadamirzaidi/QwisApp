@@ -8,10 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
 import com.mmuhamadamirzaidi.qwisapp.R;
 
-public class StudentPlayingGameActivity extends AppCompatActivity implements View.OnClickListener{
+public class StudentPlayingGameActivity extends AppCompatActivity implements View.OnClickListener {
 
     final static long INTERVAL = 1000; //1 second
     final static long TIMEOUT = 41000; //41 second, must extra 1 second
@@ -19,7 +20,7 @@ public class StudentPlayingGameActivity extends AppCompatActivity implements Vie
 
     CountDownTimer mCountDown;
 
-    int index = 0, score =0, thisQuestion = 0, totalQuestion = 0, correctAnswer;
+    int index = 0, score = 0, thisQuestion = 0, totalQuestion, correctAnswer;
 
     private int maxTime = 40;
 
@@ -33,18 +34,18 @@ public class StudentPlayingGameActivity extends AppCompatActivity implements Vie
         setContentView(R.layout.activity_student_playing_game);
 
         //Views
-        countdown = (TextView)findViewById(R.id.countdown);
-        txtScore = (TextView)findViewById(R.id.txtScore);
-        txtQuestionNum = (TextView)findViewById(R.id.txtTotalQuestion);
-        question_text = (TextView)findViewById(R.id.question_text);
+        countdown = (TextView) findViewById(R.id.countdown);
+        txtScore = (TextView) findViewById(R.id.txtScore);
+        txtQuestionNum = (TextView) findViewById(R.id.txtTotalQuestion);
+        question_text = (TextView) findViewById(R.id.question_text);
 
-        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setMax(maxTime);
 
-        btnA = (Button)findViewById(R.id.btnAnswerA);
-        btnB = (Button)findViewById(R.id.btnAnswerB);
-        btnC = (Button)findViewById(R.id.btnAnswerC);
-        btnD = (Button)findViewById(R.id.btnAnswerD);
+        btnA = (Button) findViewById(R.id.btnAnswerA);
+        btnB = (Button) findViewById(R.id.btnAnswerB);
+        btnC = (Button) findViewById(R.id.btnAnswerC);
+        btnD = (Button) findViewById(R.id.btnAnswerD);
 
         btnA.setOnClickListener(this);
         btnB.setOnClickListener(this);
@@ -57,12 +58,14 @@ public class StudentPlayingGameActivity extends AppCompatActivity implements Vie
 
         mCountDown.cancel();
         if (index < totalQuestion) { //Still have questions in list
-            //Choose correct answer
-            score+=1.5;
+
+            Button clickedButton = (Button) view;
+            if (clickedButton.getText().equals(Common.ListQuestion.get(index).getCorrectAnswer()))
+                //Choose correct answer
+                score += 1.5;
             correctAnswer++;
             showQuestions(++index); //Next questions
-        }
-        else{
+        } else {
             //Choose wrong answer
             Intent intent = new Intent(this, StudentDoneGameActivity.class);
             Bundle dataSend = new Bundle();
@@ -73,18 +76,19 @@ public class StudentPlayingGameActivity extends AppCompatActivity implements Vie
             startActivity(intent);
             finish();
         }
-        txtScore.setText(String.format("CURRENT SCORE : %d", score));
+        txtScore.setText(String.format("CURRENT SCORE: %d", score));
     }
 
     private void showQuestions(int index) {
-        if (index < totalQuestion){
+        if (index < totalQuestion) {
             thisQuestion++;
-            txtQuestionNum.setText(String.format("QUESTIONS : %d / %d", thisQuestion, totalQuestion));
+            txtQuestionNum.setText(String.format("QUESTIONS: %d / %d", thisQuestion, totalQuestion));
             progressBar.setProgress(0);
             progressValue = 0;
             downtime = 41;
 
-            if (Common.ListQuestion.get(index).getIsImageQuestion().equals("false")){
+            if (Common.ListQuestion.get(index).getIsImageQuestion().equals("false"))
+            {
                 question_text.setText(Common.ListQuestion.get(index).getQuestion());
             }
             btnA.setText(Common.ListQuestion.get(index).getAnswerA());
@@ -93,8 +97,8 @@ public class StudentPlayingGameActivity extends AppCompatActivity implements Vie
             btnD.setText(Common.ListQuestion.get(index).getAnswerD());
 
             mCountDown.start(); //Start timer countdown
-        }
-        else{
+
+        } else {
             //If it is final question
             Intent intent = new Intent(this, StudentDoneGameActivity.class);
             Bundle dataSend = new Bundle();

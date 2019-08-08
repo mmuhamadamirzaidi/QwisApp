@@ -20,7 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mmuhamadamirzaidi.qwisapp.Common.Common;
-import com.mmuhamadamirzaidi.qwisapp.Model.Questions;
+import com.mmuhamadamirzaidi.qwisapp.Model.Question;
 import com.mmuhamadamirzaidi.qwisapp.R;
 
 import java.io.IOException;
@@ -42,7 +42,7 @@ public class StudentStartGameActivity extends AppCompatActivity {
 
         //Firebase
         database = FirebaseDatabase.getInstance();
-        questions = database.getReference("Questions");
+        questions = database.getReference("Question");
 
         CategoryTitleHeader = findViewById(R.id.categorytitleheader);
         CategorySubtitleHeader = findViewById(R.id.categorysubtitleheader);
@@ -93,7 +93,7 @@ public class StudentStartGameActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    Questions ques = dataSnapshot1.getValue(Questions.class);
+                    Question ques = dataSnapshot1.getValue(Question.class);
                     Common.ListQuestion.add(ques);
                 }
             }
