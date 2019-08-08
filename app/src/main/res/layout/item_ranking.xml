@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/mr"
-                android:text=" points"
+                android:text=" marks"
                 android:textColor="#ADADAD" />
 
         </LinearLayout>

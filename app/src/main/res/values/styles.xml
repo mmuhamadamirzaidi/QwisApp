@@ -18,7 +18,8 @@
 
     <style name="QuizPageFooter">
         <item name="android:background">#F4F4F4</item>
-        <item name="android:padding">@dimen/activity_horizontal_margin</item>
+        <item name="android:bottom">@dimen/activity_horizontal_margin</item>
+        <item name="android:top">@dimen/activity_horizontal_margin</item>
     </style>
 
     <style name="FullStatistics" parent="StatsLabels">

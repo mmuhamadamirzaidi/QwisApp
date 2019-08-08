@@ -172,7 +172,7 @@
     android:layout_marginEnd="8dp"
     android:background="@drawable/bg_button_play_quiz"
     android:fontFamily="@font/mm"
-    android:text="Try Again!"
+    android:text="Finish!"
     android:textAllCaps="false"
     android:textColor="#FFF"
     android:textSize="20sp"

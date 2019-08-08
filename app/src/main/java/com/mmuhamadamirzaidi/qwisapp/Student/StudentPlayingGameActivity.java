@@ -58,7 +58,7 @@ public class StudentPlayingGameActivity extends AppCompatActivity implements Vie
         mCountDown.cancel();
         if (index < totalQuestion) { //Still have questions in list
             //Choose correct answer
-            score+=10;
+            score+=1.5;
             correctAnswer++;
             showQuestions(++index); //Next questions
         }
@@ -84,19 +84,6 @@ public class StudentPlayingGameActivity extends AppCompatActivity implements Vie
             progressValue = 0;
             downtime = 41;
 
-//            if (Common.ListQuestion.get(index).getIsImageQuestion().equals("true")){
-//                //If question is image
-//                Picasso.get().load(Common.ListQuestion.get(index).getQuestion()).into(question_image);
-//
-//                question_image.setVisibility(View.VISIBLE);
-//                question_text.setVisibility(View.INVISIBLE);
-//            }
-//            else{
-//                question_text.setText(Common.ListQuestion.get(index).getQuestion());
-//
-//                question_image.setVisibility(View.INVISIBLE);
-//                question_text.setVisibility(View.VISIBLE);
-//            }
             if (Common.ListQuestion.get(index).getIsImageQuestion().equals("false")){
                 question_text.setText(Common.ListQuestion.get(index).getQuestion());
             }
